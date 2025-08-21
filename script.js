@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (cartCountSpan) cartCountSpan.textContent = totalItems;
         }
 
-        if (window.location.pathname.includes('/checkout.html')) {
+        if (document.getElementById('checkoutOrderSummary')) {
             updateCheckoutSummary();
         }
     }
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    if (window.location.pathname.includes('/checkout.html')) {
+    if (checkoutOrderSummary || checkoutForm) {
         updateCheckoutSummary();
 
         if (checkoutForm) {
