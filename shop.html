@@ -40,8 +40,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/about.html">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/shop.html">Shop</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="/shop.html" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">
+                            Shop
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="shopDropdown">
+                            <li><a class="dropdown-item" href="/shop.html">View All</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="/men.html">Men</a></li>
+                            <li><a class="dropdown-item" href="/women.html">Women</a></li>
+                            <li><a class="dropdown-item" href="/unisex.html">Unisex</a></li>
+                            <li><a class="dropdown-item" href="/premium.html">Premium</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/faq.html">FAQ</a>
@@ -83,14 +93,14 @@
 
     <main>
         <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <!-- <nav aria-label="breadcrumb" class="breadcrumb-nav">
             <div class="container-fluid main-content">
                 <ol class="breadcrumb mb-0 bg-transparent">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Shop</li>
                 </ol>
             </div>
-        </nav>
+        </nav> -->
 
         <!-- Page Header -->
         <section class="shop-header">
@@ -113,12 +123,14 @@
                             <option value="all" selected>Category: All</option>
                             <option value="men">Men</option>
                             <option value="women">Women</option>
+                            <option value="unisex">Unisex</option>
+                            <option value="premium">Premium</option>
                         </select>
                         <select class="form-select me-md-3 mb-2 mb-md-0" id="priceFilter" aria-label="Price Range">
                             <option value="all" selected>Price Range: All</option>
-                            <option value="under100">Under Rs. 100</option>
-                            <option value="100-150">Rs. 100 – Rs. 150</option>
-                            <option value="150plus">Rs. 150+</option>
+                            <option value="under2000">Under Rs. 2,000</option>
+                            <option value="2000-2300">Rs. 2,000 – Rs. 2,300</option>
+                            <option value="2300plus">Rs. 2,300+</option>
                         </select>
                     </div>
                     <!-- Apply Filter Button has been removed -->

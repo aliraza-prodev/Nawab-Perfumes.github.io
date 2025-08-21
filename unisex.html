@@ -3,26 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contact Us – Nawab Fragrances</title>
+    <title>Unisex Perfumes – Nawab Fragrances</title>
     <link rel="icon" type="image/x-icon" href="/assets/TitleImage.png">
-    <meta name="description" content="Get in touch with Nawab Fragrances. Contact us for inquiries, support, or feedback via our form, email, or phone.">
-    <meta property="og:title" content="Get in Touch – Nawab Fragrances">
-    <meta property="og:description" content="Reach out to us with any questions or comments. We're here to assist you.">
+    <meta name="description" content="Discover our exclusive collection of unisex fragrances. Versatile scents perfect for everyone.">
+    <meta property="og:title" content="Unisex Perfumes – Nawab Fragrances">
+    <meta property="og:description" content="Versatile and captivating fragrances designed for everyone, available for Cash on Delivery.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1627914619391-4566c303f26f?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-    <meta property="og:url" content="https://www.noirandor.pk/contact.html">
+    <meta property="og:url" content="https://www.noirandor.pk/shop/unisex.html">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="assets/favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-XXXXX-Y');
-    </script>
 </head>
 <body>
     <!-- Header (Global) -->
@@ -41,7 +34,7 @@
                         <a class="nav-link" href="/about.html">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/shop.html" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle active" href="/shop.html" id="shopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">
                             Shop
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="shopDropdown">
@@ -57,7 +50,7 @@
                         <a class="nav-link" href="/faq.html">FAQ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/contact.html">Contact</a>
+                        <a class="nav-link" href="/contact.html">Contact</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center ms-lg-4">
@@ -92,41 +85,19 @@
     </div>
 
     <main>
-        <!-- Contact Section -->
-        <section class="contact-section">
+        <!-- Page Header -->
+        <section class="shop-header">
             <div class="container-fluid main-content">
-                <h1 class="text-gold">Get in Touch</h1>
-                <div class="contact-form mt-5">
-                    <form id="contactForm">
-                        <div class="form-group mb-4">
-                            <label for="contactName" class="form-label visually-hidden">Name</label>
-                            <input type="text" class="form-control" id="contactName" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group mb-4">
-                            <label for="contactEmail" class="form-label visually-hidden">Email</label>
-                            <input type="email" class="form-control" id="contactEmail" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group mb-4">
-                            <label for="contactSubject" class="form-label visually-hidden">Subject</label>
-                            <input type="text" class="form-control" id="contactSubject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group mb-4">
-                            <label for="contactMessage" class="form-label visually-hidden">Message</label>
-                            <textarea class="form-control" id="contactMessage" rows="6" placeholder="Write your message…" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-gold btn-lg">Send Message</button>
-                    </form>
-                </div>
-                <div class="company-info mt-5">
-                    <p class="text-medium-gray lead">Or reach us directly:</p>
-                    <p>Address: 123 Golden Lane, Karachi, Pakistan</p>
-                    <p>Email: <a href="mailto:support@noirandor.pk">support@noirandor.pk</a></p>
-                    <p>Phone: <a href="tel:+923001234567">+92 300 1234567</a></p>
-                    <div class="social-icons mt-4">
-                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    </div>
+                <h1 class="text-gold">Unisex Fragrances</h1>
+                <p class="lead text-light-gray">Versatile scents perfect for everyone</p>
+            </div>
+        </section>
+
+        <!-- Product Grid -->
+        <section class="product-grid py-4">
+            <div class="container-fluid main-content">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="productGrid">
+                    <!-- Product cards will be dynamically loaded here by JS -->
                 </div>
             </div>
         </section>
@@ -162,7 +133,7 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center copyright-text">
-                    <p>&copy; 2025 Nawab Fragrances. All Rights Reserved.</p>
+                    <p>© 2025 Nawab Fragrances. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
@@ -172,5 +143,41 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="script.js"></script>
+    <!-- Quick View Modal (Hidden) -->
+    <div class="modal fade" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quickViewModalLabel">Product Quick View</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="" alt="Product Image" class="img-fluid rounded quick-view-image">
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class="text-gold quick-view-title mb-3"></h3>
+                            <p class="text-light-gray quick-view-description mb-4"></p>
+                            <h4 class="text-white quick-view-price mb-4"></h4>
+                            <div class="mb-4">
+                                <label for="quickViewSize" class="form-label text-white">Size</label>
+                                <select class="form-select quick-view-size" id="quickViewSize"></select>
+                            </div>
+                            <button class="btn btn-gold w-100 quick-view-add-to-cart" data-product-id="">Add to Cart (COD)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Filter products for unisex category
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof window.filterProductsByCategory === 'function') {
+                window.filterProductsByCategory('unisex');
+            }
+        });
+    </script>
 </body>
 </html>
