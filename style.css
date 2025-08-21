@@ -3,7 +3,7 @@
     --black: #000000;
     --charcoal: #0F0F0F; /* Slightly off-black for depth */
     /* --gold: #d8a929; */
-    --gold: #eaac38;
+    --gold: #daa84c;
     --gold-hover: #C19F30; /* Slightly darker gold for hover */
     --white: #FFFFFF;
     --light-gray: #E0E0E0; /* Slightly brighter for body readability */
@@ -162,7 +162,7 @@ section {
 .navbar-nav .nav-link.active {
     color: var(--gold) !important;
 }
-.navbar-nav .nav-link::after {
+/* .navbar-nav .nav-link::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -175,12 +175,37 @@ section {
 .navbar-nav .nav-link:hover::after,
 .navbar-nav .nav-link.active::after {
     width: 100%;
-}
+} */
 .navbar-toggler {
     border-color: var(--gold) !important;
 }
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23D4AF37' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Dropdown (Shop) theming to match site colors */
+.navbar .dropdown-menu {
+    position: absolute;
+    left: 38px;
+    background-color: var(--darker-gray);
+    border: 1px solid var(--dark-gray);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+.navbar .dropdown-item {
+    color: var(--light-gray);
+}
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+    background-color: var(--charcoal);
+    color: var(--gold);
+}
+.navbar .dropdown-item.active,
+.navbar .dropdown-item:active {
+    background-color: var(--gold) !important; /* override Bootstrap blue */
+    color: var(--black) !important;
+}
+.navbar .dropdown-divider {
+    border-top-color: var(--dark-gray);
 }
 
 /* Cart Icon in Header */

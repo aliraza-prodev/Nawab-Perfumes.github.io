@@ -10,22 +10,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Product Data ---
     const products = [
         // --- Women ---
-        { id: 'hif-coco-chanel', name: 'H.I.F.', tagline: 'Inspired by Coco Chanel', price: 1950, image: 'assets/H.I.F-100ml.png', sizes: ['50ml'], category: 'women', premium: false },
-        { id: 'butterfly-gucci-bloom', name: 'Butterfly', tagline: 'Inspired by Gucci Bloom', price: 1950, image: 'assets/G-Bloom-100ml.png', sizes: ['50ml'], category: 'women', premium: false },
-        { id: 'gorgeous-tommy-girl', name: 'Gorgeous', tagline: 'Inspired by Tommy Girl', price: 1950, image: 'assets/Tommy-G-100ml.png', sizes: ['50ml'], category: 'women', premium: false },
+        { id: 'hif-coco-chanel', name: 'H.I.F.', tagline: 'Inspired by Coco Chanel', price: 1950, image: 'assets/hif-coco-chanel.jpg', sizes: ['50ml'], category: 'women', premium: false },
+        { id: 'butterfly-gucci-bloom', name: 'Butterfly', tagline: 'Inspired by Gucci Bloom', price: 1950, image: 'assets/butterfly-gucci-bloom.jpg', sizes: ['50ml'], category: 'women', premium: false },
+        { id: 'gorgeous-tommy-girl', name: 'Gorgeous', tagline: 'Inspired by Tommy Girl', price: 1950, image: 'assets/gorgeous-tommy-girl.jpg', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'shelter-bomb-shell', name: 'Shelter', tagline: 'Inspired by Bomb Shell', price: 1950, image: 'assets/OLD-Pictures/Bomb-S-100ml.png', sizes: ['50ml'], category: 'women', premium: false },
-        { id: 'golden-girl-guess-gold', name: 'Golden Girl', tagline: 'Inspired by Guess Gold', price: 1950, image: 'assets/G-Gold-100ml.png', sizes: ['50ml'], category: 'women', premium: false },
-        { id: 'flora-moves-gucci-flora', name: 'Flora Moves', tagline: 'Inspired by Gucci Flora', price: 1950, image: 'assets/Flora-Moves-100ml.png', sizes: ['50ml'], category: 'women', premium: false },
-        { id: 'gull-baccarat-rouge-540', name: 'Gull', tagline: 'Inspired by Baccarat Rouge 540', price: 1950, image: 'assets/Royal-Oud-100ml.png', sizes: ['50ml'], category: 'women', premium: false },
-        { id: 'crystal-jadore', name: 'Crystal', tagline: 'Inspired by J’adore', price: 1950, image: 'assets/Nawab-Begum-100ml.png', sizes: ['50ml'], category: 'women', premium: false },
+        { id: 'golden-girl-guess-gold', name: 'Golden Girl', tagline: 'Inspired by Guess Gold', price: 1950, image: 'assets/golden-girl-guess-gold.jpg', sizes: ['50ml'], category: 'women', premium: false },
+        { id: 'flora-moves-gucci-flora', name: 'Flora Moves', tagline: 'Inspired by Gucci Flora', price: 1950, image: 'assets/flora-moves-gucci-flora.jpg', sizes: ['50ml'], category: 'women', premium: false },
+        { id: 'gull-baccarat-rouge-540', name: 'Gull', tagline: 'Inspired by Baccarat Rouge 540', price: 1950, image: 'assets/gull-baccarat-rouge-540.jpg', sizes: ['50ml'], category: 'women', premium: false },
+        { id: 'crystal-jadore', name: 'Crystal', tagline: 'Inspired by J’adore', price: 1950, image: 'assets/crystal-jadore.jpg', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'touch-burberry-body', name: 'Touch', tagline: 'Inspired by Burberry Body', price: 1950, image: 'assets/G-Flora-100ml.png', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'rainbow-black-opium', name: 'Rainbow', tagline: 'Inspired by Black Opium', price: 1950, image: 'assets/Special-Oud-100ml.png', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'platinum-dg-light-blue', name: 'Platinum', tagline: 'Inspired by Light Blue', price: 1950, image: 'assets/Cool-100ml.png', sizes: ['50ml'], category: 'women', premium: false },
-        { id: 'aroma-breeze-spring-flower', name: 'Aroma Breeze', tagline: 'Inspired by Spring Flower', price: 2150, image: 'assets/Creed-100ml.png', sizes: ['50ml'], category: 'women', premium: true },
+        { id: 'aroma-breeze-spring-flower', name: 'Aroma Breeze', tagline: 'Inspired by Spring Flower', price: 2150, image: 'assets/aroma-breeze-spring-flower.jpg', sizes: ['50ml'], category: 'women', premium: true },
         { id: 'nawab-signature-girl', name: 'Nawab Signature Perfume for Girl', tagline: 'Signature Series', price: 2450, image: 'assets/Nawab-Begum-100ml.png', sizes: ['50ml'], category: 'women', premium: true },
 
         // --- Unisex ---
-        { id: 'angel-paradise-city-of-stars', name: 'Angel Paradise', tagline: 'Inspired by City of Stars', price: 2150, image: 'assets/Aura-100ml.png', sizes: ['50ml'], category: 'unisex', premium: true },
+        { id: 'angel-paradise-city-of-stars', name: 'Angel Paradise', tagline: 'Inspired by City of Stars', price: 2150, image: 'assets/angel-paradise-city-of-stars.jpg', sizes: ['50ml'], category: 'unisex', premium: true },
         { id: 'time-less-no4', name: 'Time less', tagline: 'Inspired by Signature Blend', price: 1950, image: 'assets/Timeless-100ml.png', sizes: ['50ml'], category: 'unisex', premium: false },
         { id: 'white-oud-premium', name: 'White Oud Premium', tagline: 'Inspired by Premium Oud', price: 2150, image: 'assets/White-Oud-Premium-100ml.png', sizes: ['50ml'], category: 'unisex', premium: true },
         { id: 'imperial-oud-ispahan', name: 'Imperial Oud', tagline: 'Inspired by Oud Ispahan', price: 1950, image: 'assets/Royal-Oud-100ml.png', sizes: ['50ml'], category: 'unisex', premium: false },
