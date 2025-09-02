@@ -13,41 +13,41 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'hif-coco-chanel', name: 'H.I.F.', tagline: 'Inspired by Coco Chanel', price: 1950, image: 'assets/hif-coco-chanel.jpg', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'butterfly-gucci-bloom', name: 'Butterfly', tagline: 'Inspired by Gucci Bloom', price: 1950, image: 'assets/butterfly-gucci-bloom.jpg', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'gorgeous-tommy-girl', name: 'Gorgeous', tagline: 'Inspired by Tommy Girl', price: 1950, image: 'assets/gorgeous-tommy-girl.jpg', sizes: ['50ml'], category: 'women', premium: false },
-        { id: 'shelter-bomb-shell', name: 'Shelter', tagline: 'Inspired by Bomb Shell', price: 1950, image: 'assets/OLD-Pictures/Bomb-S-100ml.png', sizes: ['50ml'], category: 'women', premium: false },
+        { id: 'shelter-bomb-shell', name: 'Shelter', tagline: 'Inspired by Bomb Shell', price: 1950, image: 'assets/shelter4.jpg', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'golden-girl-guess-gold', name: 'Golden Girl', tagline: 'Inspired by Guess Gold', price: 1950, image: 'assets/golden-girl-guess-gold.jpg', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'flora-moves-gucci-flora', name: 'Flora Moves', tagline: 'Inspired by Gucci Flora', price: 1950, image: 'assets/flora-moves-gucci-flora.jpg', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'gull-baccarat-rouge-540', name: 'Gull', tagline: 'Inspired by Baccarat Rouge 540', price: 1950, image: 'assets/gull-baccarat-rouge-540.jpg', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'crystal-jadore', name: 'Crystal', tagline: 'Inspired by J’adore', price: 1950, image: 'assets/crystal-jadore.jpg', sizes: ['50ml'], category: 'women', premium: false },
-        { id: 'touch-burberry-body', name: 'Touch', tagline: 'Inspired by Burberry Body', price: 1950, image: 'assets/G-Flora-100ml.png', sizes: ['50ml'], category: 'women', premium: false },
+        { id: 'touch-burberry-body', name: 'Touch', tagline: 'Inspired by Burberry Body', price: 1950, image: 'assets/touch.jpg', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'rainbow-black-opium', name: 'Rainbow', tagline: 'Inspired by Black Opium', price: 1950, image: 'assets/Special-Oud-100ml.png', sizes: ['50ml'], category: 'women', premium: false },
-        { id: 'platinum-dg-light-blue', name: 'Platinum', tagline: 'Inspired by Light Blue', price: 1950, image: 'assets/Cool-100ml.png', sizes: ['50ml'], category: 'women', premium: false },
+        { id: 'platinum-dg-light-blue', name: 'Platinum', tagline: 'Inspired by Light Blue', price: 1950, image: 'assets/platinum.jpg', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'aroma-breeze-spring-flower', name: 'Aroma Breeze', tagline: 'Inspired by Spring Flower', price: 2150, image: 'assets/aroma-breeze-spring-flower.jpg', sizes: ['50ml'], category: 'women', premium: true },
         { id: 'nawab-signature-girl', name: 'Nawab Signature Perfume for Girl', tagline: 'Signature Series', price: 2450, image: 'assets/Nawab-Begum-100ml.png', sizes: ['50ml'], category: 'women', premium: true },
 
         // --- Unisex ---
         { id: 'angel-paradise-city-of-stars', name: 'Angel Paradise', tagline: 'Inspired by City of Stars', price: 2150, image: 'assets/angel-paradise-city-of-stars.jpg', sizes: ['50ml'], category: 'unisex', premium: true },
-        { id: 'time-less-no4', name: 'Time less', tagline: 'Inspired by Signature Blend', price: 1950, image: 'assets/Timeless-100ml.png', sizes: ['50ml'], category: 'unisex', premium: false },
+        { id: 'time-less-no4', name: 'Time less', tagline: 'Inspired by Signature Blend', price: 1950, image: 'assets/timeless.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
         { id: 'white-oud-premium', name: 'White Oud Premium', tagline: 'Inspired by Premium Oud', price: 2150, image: 'assets/White-Oud-Premium-100ml.png', sizes: ['50ml'], category: 'unisex', premium: true },
-        { id: 'imperial-oud-ispahan', name: 'Imperial Oud', tagline: 'Inspired by Oud Ispahan', price: 1950, image: 'assets/Royal-Oud-100ml.png', sizes: ['50ml'], category: 'unisex', premium: false },
+        { id: 'imperial-oud-ispahan', name: 'Imperial Oud', tagline: 'Inspired by Oud Ispahan', price: 1950, image: 'assets/imperial-oud.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
         { id: 'vip-royal-oud', name: 'VIP Royal Oud', tagline: 'Inspired by Royal Oud', price: 1950, image: 'assets/Royal-Oud-100ml.png', sizes: ['50ml'], category: 'unisex', premium: false },
-        { id: 'persona-chocolate-musk', name: 'Persona', tagline: 'Inspired by Chocolate Musk', price: 1950, image: 'assets/Chocolate-Musk-100ml.png', sizes: ['50ml'], category: 'unisex', premium: false },
+        { id: 'persona-chocolate-musk', name: 'Persona', tagline: 'Inspired by Chocolate Musk', price: 1950, image: 'assets/Persona.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
         { id: 'king-srk', name: 'KING SRK', tagline: 'Inspired by Signature Series', price: 2150, image: 'assets/Special-Oud-100ml.png', sizes: ['50ml'], category: 'unisex', premium: true },
-        { id: 'prime-ck-one', name: 'Prime', tagline: 'Inspired by CK One', price: 1950, image: 'assets/Nawab-Office-100ml.png', sizes: ['50ml'], category: 'unisex', premium: false },
+        { id: 'prime-ck-one', name: 'Prime', tagline: 'Inspired by CK One', price: 1950, image: 'assets/prime.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
 
         // --- Men ---
-        { id: 'kingdom-bvlgari-aqva', name: 'Kingdom', tagline: 'Inspired by Aqva', price: 1950, image: 'assets/Kingdom-100ml.png', sizes: ['50ml'], category: 'men', premium: false },
-        { id: 'era-oud-wood', name: 'Era', tagline: 'Inspired by Oud Wood', price: 1950, image: 'assets/Era-100ml.png', sizes: ['50ml'], category: 'men', premium: false },
-        { id: 'aura-issey-miyake', name: 'Aura', tagline: 'Inspired by Issey Miyake', price: 1950, image: 'assets/Aura-100ml.png', sizes: ['50ml'], category: 'men', premium: false },
-        { id: 'crush-sauvage-dior', name: 'Crush', tagline: 'Inspired by Sauvage Dior', price: 1950, image: 'assets/Crush-100ml.png', sizes: ['50ml'], category: 'men', premium: false },
-        { id: 'vip-gold-one-million', name: 'VIP Gold', tagline: 'Inspired by 1 Million', price: 2150, image: 'assets/Vip-Gold-100ml.png', sizes: ['50ml'], category: 'men', premium: true },
-        { id: 'sigma-tuscan-leather', name: 'SIGMA', tagline: 'Inspired by Tuscan Leather', price: 2150, image: 'assets/Nawab-T-Leather-100ml.png', sizes: ['50ml'], category: 'men', premium: true },
-        { id: 'freedom-office-for-men', name: 'Freedom', tagline: 'Office For Men', price: 1950, image: 'assets/Nawab-Office-100ml.png', sizes: ['50ml'], category: 'men', premium: false },
-        { id: 'alpha-man-creed-aventus', name: 'Alpha Man', tagline: 'Inspired by Aventus', price: 1950, image: 'assets/Creed-100ml.png', sizes: ['50ml'], category: 'men', premium: false },
-        { id: 'mbf-invictus-legend', name: 'M.B.F', tagline: 'Inspired by Invictus Legend', price: 1950, image: 'assets/Corporate-100ml.png', sizes: ['50ml'], category: 'men', premium: false },
+        { id: 'kingdom-bvlgari-aqva', name: 'Kingdom', tagline: 'Inspired by Aqva', price: 1950, image: 'assets/kingdom.jpg', sizes: ['50ml'], category: 'men', premium: false },
+        { id: 'era-oud-wood', name: 'Era', tagline: 'Inspired by Oud Wood', price: 1950, image: 'assets/era.jpg', sizes: ['50ml'], category: 'men', premium: false },
+        { id: 'aura-issey-miyake', name: 'Aura', tagline: 'Inspired by Issey Miyake', price: 1950, image: 'assets/aura.jpg', sizes: ['50ml'], category: 'men', premium: false },
+        { id: 'crush-sauvage-dior', name: 'Crush', tagline: 'Inspired by Sauvage Dior', price: 1950, image: 'assets/crush.jpg', sizes: ['50ml'], category: 'men', premium: false },
+        { id: 'vip-gold-one-million', name: 'VIP Gold', tagline: 'Inspired by 1 Million', price: 2150, image: 'assets/vip-gold.jpg', sizes: ['50ml'], category: 'men', premium: true },
+        { id: 'sigma-tuscan-leather', name: 'SIGMA', tagline: 'Inspired by Tuscan Leather', price: 2150, image: 'assets/sigma.jpg', sizes: ['50ml'], category: 'men', premium: true },
+        { id: 'freedom-office-for-men', name: 'Freedom', tagline: 'Office For Men', price: 1950, image: 'assets/freedom.jpg', sizes: ['50ml'], category: 'men', premium: false },
+        { id: 'alpha-man-creed-aventus', name: 'Alpha Man', tagline: 'Inspired by Aventus', price: 1950, image: 'assets/alfa-men.jpg', sizes: ['50ml'], category: 'men', premium: false },
+        { id: 'mbf-invictus-legend', name: 'M.B.F', tagline: 'Inspired by Invictus Legend', price: 1950, image: 'assets/mbf.jpg', sizes: ['50ml'], category: 'men', premium: false },
         { id: 'lethal-blue-d-chanel', name: 'Lethal', tagline: 'Inspired by Bleu de Chanel', price: 1950, image: 'assets/Nawab-Blue-D-100ml.png', sizes: ['50ml'], category: 'men', premium: false },
         { id: 'power-terre-dhermes', name: 'Power', tagline: 'Inspired by Terre d’Hermes', price: 1950, image: 'assets/Nawab-H-Boss-100ml.png', sizes: ['50ml'], category: 'men', premium: false },
-        { id: 'life-hugo-boss', name: 'Life', tagline: 'Inspired by Hugo Boss', price: 1950, image: 'assets/Nawab-H-Boss-100ml.png', sizes: ['50ml'], category: 'men', premium: false },
-        { id: 'nawab-signature-men', name: 'Nawab Signature Perfume for Men', tagline: 'Signature Series', price: 2450, image: 'assets/Nawab-Saheb-100ml.png', sizes: ['50ml'], category: 'men', premium: true }
+        { id: 'life-hugo-boss', name: 'Life', tagline: 'Inspired by Hugo Boss', price: 1950, image: 'assets/life.jpg', sizes: ['50ml'], category: 'men', premium: false },
+        { id: 'nawab-signature-men', name: 'Nawab Signature Perfume for Men', tagline: 'Signature Series', price: 2450, image: 'assets/Nawab-Signature-Men.jpg', sizes: ['50ml'], category: 'men', premium: true }
     ];
 
     // --- Cart Functions ---
@@ -166,6 +166,70 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- Global delegation for floating Add-to-Cart & Quick-View on home/cards ---
+    document.body.addEventListener('click', (e) => {
+        const addBtn = e.target.closest('.add-to-cart-btn');
+        if (addBtn) {
+            e.preventDefault();
+            const productId = addBtn.dataset.productId;
+            addToCart(productId);
+            return;
+        }
+        const quickBtn = e.target.closest('.quick-view-btn');
+        if (quickBtn) {
+            // Bootstrap handles showing the modal via data attributes; we just ensure dataset is present
+            // Nothing else required here.
+        }
+    });
+
+    // --- Global Quick View modal population (works on all pages) ---
+    (function setupGlobalQuickView(){
+        const quickViewModal = document.getElementById('quickViewModal');
+        if (!quickViewModal) return;
+
+        quickViewModal.addEventListener('show.bs.modal', (event) => {
+            const trigger = event.relatedTarget;
+            if (!trigger) return;
+            const productId = trigger.dataset.productId;
+            const product = findProductById(productId);
+            if (!product) return;
+
+            quickViewModal.querySelector('.modal-title').textContent = product.name;
+            quickViewModal.querySelector('.quick-view-image').src = product.image;
+            quickViewModal.querySelector('.quick-view-description').textContent = product.tagline || '';
+            quickViewModal.querySelector('.quick-view-price').textContent = `Rs. ${product.price.toLocaleString()}`;
+
+            const sizeSelect = quickViewModal.querySelector('.quick-view-size');
+            const sizeContainer = sizeSelect.closest('div');
+            sizeSelect.innerHTML = '';
+            if (product.sizes && product.sizes.length) {
+                product.sizes.forEach(size => {
+                    const option = document.createElement('option');
+                    option.value = size;
+                    option.textContent = size;
+                    sizeSelect.appendChild(option);
+                });
+                sizeContainer.style.display = 'block';
+            } else {
+                sizeContainer.style.display = 'none';
+            }
+            quickViewModal.querySelector('.quick-view-add-to-cart').dataset.productId = productId;
+        });
+
+        const addBtn = quickViewModal.querySelector('.quick-view-add-to-cart');
+        if (addBtn) {
+            addBtn.addEventListener('click', (e) => {
+                const productId = e.target.dataset.productId;
+                const sizeSelect = quickViewModal.querySelector('.quick-view-size');
+                const sizeContainer = sizeSelect.closest('div');
+                const selectedSize = sizeContainer.style.display !== 'none' ? sizeSelect.value : null;
+                addToCart(productId, 1, selectedSize);
+                const modalInstance = bootstrap.Modal.getInstance(quickViewModal);
+                if (modalInstance) modalInstance.hide();
+            });
+        }
+    })();
 
     // --- Checkout Page Logic (UPDATED FOR WEB3FORMS) ---
     const checkoutOrderSummary = document.getElementById('checkoutOrderSummary');
@@ -435,46 +499,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        const quickViewModal = document.getElementById('quickViewModal');
-        if (quickViewModal) {
-            quickViewModal.addEventListener('show.bs.modal', (event) => {
-                const button = event.relatedTarget;
-                if (!button) return;
-                const productId = button.dataset.productId;
-                const product = findProductById(productId);
-                if (product) {
-                    quickViewModal.querySelector('.modal-title').textContent = product.name;
-                    quickViewModal.querySelector('.quick-view-image').src = product.image;
-                    quickViewModal.querySelector('.quick-view-description').textContent = product.tagline;
-                    quickViewModal.querySelector('.quick-view-price').textContent = `Rs. ${product.price.toLocaleString()}`;
-                    const sizeSelect = quickViewModal.querySelector('.quick-view-size');
-                    const sizeContainer = sizeSelect.closest('div');
-                    sizeSelect.innerHTML = '';
-                    if (product.sizes && product.sizes.length > 0) {
-                        product.sizes.forEach(size => {
-                            const option = document.createElement('option');
-                            option.value = size;
-                            option.textContent = size;
-                            sizeSelect.appendChild(option);
-                        });
-                        sizeContainer.style.display = 'block';
-                    } else {
-                        sizeContainer.style.display = 'none';
-                    }
-                    quickViewModal.querySelector('.quick-view-add-to-cart').dataset.productId = productId;
-                }
-            });
-
-            quickViewModal.querySelector('.quick-view-add-to-cart').addEventListener('click', (e) => {
-                const productId = e.target.dataset.productId;
-                const sizeSelect = quickViewModal.querySelector('.quick-view-size');
-                const sizeContainer = sizeSelect.closest('div');
-                const selectedSize = sizeContainer.style.display !== 'none' ? sizeSelect.value : null;
-                addToCart(productId, 1, selectedSize);
-                const modalInstance = bootstrap.Modal.getInstance(quickViewModal);
-                if(modalInstance) modalInstance.hide();
-            });
-        }
+        // Quick View setup moved to global scope below
 
         // Expose simple category filter for category pages
         window.filterProductsByCategory = function(categoryKey) {
@@ -488,6 +513,60 @@ document.addEventListener('DOMContentLoaded', () => {
             renderShopPage(1);
         };
     }
+
+    // --- Smooth, non-intrusive animations ---
+    (function setupRevealAnimations() {
+        const supportsIO = 'IntersectionObserver' in window;
+        const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!supportsIO || prefersReduced) {
+            // If not supported or user prefers reduced motion, ensure elements are visible.
+            document.querySelectorAll('.reveal').forEach(el => el.classList.add('reveal-visible'));
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+
+        // Auto-tag common blocks if not already marked
+        const candidates = [
+            '.hero-section h1',
+            '.hero-section h2',
+            '.info-section .col-md-6',
+            '.featured-collection .product-card',
+            '.how-to-choose-section .col-md-4',
+            '.newsletter-section .container > *',
+            '.product-grid .product-card',
+            '.product-detail-section .main-image, .product-detail-section .product-title, .product-detail-section .product-description, .product-detail-section .product-price, .product-detail-section .size-selector, .product-detail-section .quantity-selector',
+            '.product-tabs .tab-content',
+            '.recommended-products-section .product-card',
+            '.about-hero *',
+            '.history-section .timeline-item',
+            '.brand-values-section .col-md-4',
+            '.faq-section .accordion-item',
+            '.contact-form, .company-info',
+            '.checkout-section .order-summary, .checkout-section .shipping-details-form'
+        ];
+
+        const elements = candidates
+            .map(sel => Array.from(document.querySelectorAll(sel)))
+            .flat()
+            .filter(Boolean);
+
+        elements.forEach((el, index) => {
+            if (!el.classList.contains('reveal-visible')) {
+                el.classList.add('reveal', 'fade-up');
+                // Stagger within siblings for nicer effect
+                el.style.transitionDelay = `${Math.min((index % 6) * 60, 240)}ms`;
+                observer.observe(el);
+            }
+        });
+    })();
 
     // Helper generators for product detail fallbacks
     function generateDefaultDescription(product) {

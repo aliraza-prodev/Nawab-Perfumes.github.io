@@ -125,43 +125,395 @@
 
         <!-- Featured Collection -->
         <section class="featured-collection py-5" id="featured">
-            <div class="container-fluid main-content text-center">
-                <h2 class="mb-3">Featured Collection</h2>
-                <p class="lead mb-5 text-light-gray">Our handpicked bestsellers that define luxury.</p>
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            <div class="container-fluid main-content">
+                <div class="d-flex justify-content-between align-items-end mb-3">
+                    <div>
+                        <h2 class="mb-0">Featured Collection</h2>
+                        <p class="lead text-light-gray mb-0">Our handpicked bestsellers that define luxury.</p>
+                    </div>
+                    <div>
+                        <a href="/shop.html" class="btn btn-outline-gold">View All</a>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
                     <!-- Product Card 1 -->
                     <div class="col">
-                        <div class="product-card">
-                            <a href="/product.html?id=flora-moves-gucci-flora"><img src="assets/flora-moves-gucci-flora.jpg" alt="Aura – Issey Miyake" class="img-fluid" loading="lazy"></a>
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="flora-moves-gucci-flora" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="flora-moves-gucci-flora" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=flora-moves-gucci-flora"><img src="assets/flora-moves-gucci-flora.jpg" alt="Flora Moves" class="img-fluid" loading="lazy"></a>
                             <h3 class="product-name">Flora Moves</h3>
                             <p class="product-desc">Inspired by Gucci Flora</p>
                             <h4 class="product-price">Rs. 1,950</h4>
-                            <a href="/product.html?id=flora-moves-gucci-flora" class="btn btn-outline-gold mt-3">View Details</a>
+                            <a href="/product.html?id=flora-moves-gucci-flora" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                     <!-- Product Card 2 -->
                     <div class="col">
-                        <div class="product-card">
-                            <a href="/product.html?id=gorgeous-tommy-girl"><img src="assets/gorgeous-tommy-girl.jpg" alt="Nawab Signature Perfume for Men" class="img-fluid" loading="lazy"></a>
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="gorgeous-tommy-girl" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="gorgeous-tommy-girl" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=gorgeous-tommy-girl"><img src="assets/gorgeous-tommy-girl.jpg" alt="Gorgeous" class="img-fluid" loading="lazy"></a>
                             <h3 class="product-name">Gorgeous</h3>
                             <p class="product-desc">Inspired by Tommy Girl</p>
                             <h4 class="product-price">Rs. 1,950</h4>
-                            <a href="/product.html?id=gorgeous-tommy-girl" class="btn btn-outline-gold mt-3">View Details</a>
+                            <a href="/product.html?id=gorgeous-tommy-girl" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                     <!-- Product Card 3 -->
                     <div class="col">
-                        <div class="product-card">
-                            <a href="/product.html?id=butterfly-gucci-bloom"><img src="assets/butterfly-gucci-bloom.jpg" alt="White Oud Premium" class="img-fluid" loading="lazy"></a>
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="butterfly-gucci-bloom" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="butterfly-gucci-bloom" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=butterfly-gucci-bloom"><img src="assets/butterfly-gucci-bloom.jpg" alt="Butterfly" class="img-fluid" loading="lazy"></a>
                             <h3 class="product-name">Butterfly</h3>
                             <p class="product-desc">Inspired by Gucci Bloom</p>
                             <h4 class="product-price">Rs. 1,950</h4>
-                            <a href="/product.html?id=butterfly-gucci-bloom" class="btn btn-outline-gold mt-3">View Details</a>
+                            <a href="/product.html?id=butterfly-gucci-bloom" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="era-oud-wood" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="era-oud-wood" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=era-oud-wood"><img src="assets/era.jpg" alt="Era" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">Era</h3>
+                            <p class="product-desc">Inspired by Oud Wood</p>
+                            <h4 class="product-price">Rs. 1,950</h4>
+                            <a href="/product.html?id=era-oud-wood" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                    <!-- Product Card 5 -->
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="aura-issey-miyake" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="aura-issey-miyake" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=aura-issey-miyake"><img src="assets/aura.jpg" alt="Aura" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">Aura</h3>
+                            <p class="product-desc">Inspired by Issey Miyake</p>
+                            <h4 class="product-price">Rs. 1,950</h4>
+                            <a href="/product.html?id=aura-issey-miyake" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                 </div>
-                <div class="mt-5">
-                    <a href="/shop.html" class="btn btn-gold btn-lg">View All Perfumes</a>
+            </div>
+        </section>
+
+        <!-- Men Category -->
+        <section class="featured-collection py-5" id="men-category">
+            <div class="container-fluid main-content">
+                <div class="d-flex justify-content-between align-items-end mb-3">
+                    <h2 class="mb-0">Men</h2>
+                    <a href="/men.html" class="btn btn-outline-gold">View All</a>
+                </div>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="nawab-signature-men" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="nawab-signature-men" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=nawab-signature-men"><img src="assets/Nawab-Signature-Men.jpg" alt="Nawab Signature Perfume for Men" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">Nawab Signature Perfume for Men</h3>
+                            <p class="product-desc">Signature Series</p>
+                            <h4 class="product-price">Rs. 2,450</h4>
+                            <a href="/product.html?id=nawab-signature-men" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="vip-royal-oud" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="vip-royal-oud" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=vip-royal-oud"><img src="assets/Royal-Oud-100ml.png" alt="VIP Royal Oud" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">VIP Royal Oud</h3>
+                            <p class="product-desc">Inspired by Royal Oud</p>
+                            <h4 class="product-price">Rs. 2,490</h4>
+                            <a href="/product.html?id=vip-royal-oud" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="sigma-tuscan-leather" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="sigma-tuscan-leather" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=sigma-tuscan-leather"><img src="assets/sigma.jpg" alt="SIGMA" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">SIGMA</h3>
+                            <p class="product-desc">Inspired by Tuscan Leather</p>
+                            <h4 class="product-price">Rs. 2,150</h4>
+                            <a href="/product.html?id=Nawab-T-Leather" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="freedom-office-for-men" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="freedom-office-for-men" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=freedom-office-for-men"><img src="assets/freedom.jpg" alt="Freedom" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">Freedom</h3>
+                            <p class="product-desc">Office For Men</p>
+                            <h4 class="product-price">Rs. 1,950</h4>
+                            <a href="/product.html?id=freedom-office-for-men" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="alpha-man-creed-aventus" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="alpha-man-creed-aventus" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=alpha-man-creed-aventus"><img src="assets/alfa-men.jpg" alt="Alpha Man" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">Alpha Man</h3>
+                            <p class="product-desc">Inspired by Aventus</p>
+                            <h4 class="product-price">Rs. 2,250</h4>
+                            <a href="/product.html?id=alpha-man-creed-aventus" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Women Category -->
+        <section class="featured-collection py-5" id="women-category">
+            <div class="container-fluid main-content">
+                <div class="d-flex justify-content-between align-items-end mb-3">
+                    <h2 class="mb-0">Women</h2>
+                    <a href="/women.html" class="btn btn-outline-gold">View All</a>
+                </div>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="nawab-signature-girl" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="nawab-signature-girl" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=nawab-signature-girl"><img src="assets/Nawab-Begum-100ml.png" alt="Nawab Begum" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">Nawab Signature Perfume for Girl</h3>
+                            <p class="product-desc">Elegant florals</p>
+                            <h4 class="product-price">Rs. 2,450</h4>
+                            <a href="/product.html?id=nawab-signature-girl" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="flora-moves-gucci-flora" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="flora-moves-gucci-flora" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=flora-moves-gucci-flora"><img src="assets/flora-moves-gucci-flora.jpg" alt="Flora Moves" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">Flora Moves</h3>
+                            <p class="product-desc">Gucci flora inspired</p>
+                            <h4 class="product-price">Rs. 1,950</h4>
+                            <a href="/product.html?id=flora-moves-gucci-flora" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="gull-baccarat-rouge-540" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="gull-baccarat-rouge-540" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=gull-baccarat-rouge-540"><img src="assets/gull-baccarat-rouge-540.jpg" alt="G Bloom" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">Gull</h3>
+                            <p class="product-desc">Inspired by Baccarat Rouge 540</p>
+                            <h4 class="product-price">Rs. 1,950</h4>
+                            <a href="/product.html?id=gull-baccarat-rouge-540" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="persona-chocolate-musk" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="persona-chocolate-musk" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=persona-chocolate-musk"><img src="assets/Persona.jpg" alt="Chocolate Musk" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">Persona</h3>
+                            <p class="product-desc">Inspired by Chocolate Musk</p>
+                            <h4 class="product-price">Rs. 1,990</h4>
+                            <a href="/product.html?id=persona-chocolate-musk" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="golden-girl-guess-gold" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="golden-girl-guess-gold" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=golden-girl-guess-gold"><img src="assets/golden-girl-guess-gold.jpg" alt="G Gold" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">Golden Girl</h3>
+                            <p class="product-desc">Inspired by Guess Gold</p>
+                            <h4 class="product-price">Rs. 1,950</h4>
+                            <a href="/product.html?id=golden-girl-guess-gold" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Unisex Category -->
+        <section class="featured-collection py-5" id="unisex-category">
+            <div class="container-fluid main-content">
+                <div class="d-flex justify-content-between align-items-end mb-3">
+                    <h2 class="mb-0">Unisex</h2>
+                    <a href="/unisex.html" class="btn btn-outline-gold">View All</a>
+                </div>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="platinum-dg-light-blue" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="platinum-dg-light-blue" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=platinum-dg-light-blue"><img src="assets/platinum.jpg" alt="Special Oud" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">Platinum</h3>
+                            <p class="product-desc">Inspired by Light Blue</p>
+                            <h4 class="product-price">Rs. 1,950</h4>
+                            <a href="/product.html?id=platinum-dg-light-blue" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="white-oud-premium" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="white-oud-premium" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=white-oud-premium"><img src="assets/White-Oud-Premium-100ml.png" alt="White Oud Premium" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">White Oud Premium</h3>
+                            <p class="product-desc">Smooth & luxe</p>
+                            <h4 class="product-price">Rs. 2,150</h4>
+                            <a href="/product.html?id=white-oud-premium" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="prime-ck-one" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="prime-ck-one" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=prime-ck-one"><img src="assets/prime.jpg" alt="Prime" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">Prime</h3>
+                            <p class="product-desc">Inspired by CK One</p>
+                            <h4 class="product-price">Rs. 1,950</h4>
+                            <a href="/product.html?id=prime-ck-one" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="touch-burberry-body" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="touch-burberry-body" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=touch-burberry-body"><img src="assets/touch.jpg" alt="Touch" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">Touch</h3>
+                            <p class="product-desc">Inspired by Burberry Body</p>
+                            <h4 class="product-price">Rs. 1,950</h4>
+                            <a href="/product.html?id=touch-burberry-body" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="life-hugo-boss" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="life-hugo-boss" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=life-hugo-boss"><img src="assets/life.jpg" alt="Life" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">Life</h3>
+                            <p class="product-desc">Inspired by Hugo Boss</p>
+                            <h4 class="product-price">Rs. 1,850</h4>
+                            <a href="/product.html?id=life-hugo-boss" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Category -->
+        <section class="featured-collection py-5" id="premium-category">
+            <div class="container-fluid main-content">
+                <div class="d-flex justify-content-between align-items-end mb-3">
+                    <h2 class="mb-0">Premium</h2>
+                    <a href="/premium.html" class="btn btn-outline-gold">View All</a>
+                </div>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="vip-gold-one-million" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="vip-gold-one-million" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=vip-gold-one-million"><img src="assets/vip-gold.jpg" alt="VIP Gold" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">VIP Gold</h3>
+                            <p class="product-desc">Inspired by 1 Million</p>
+                            <h4 class="product-price">Rs. 2,150</h4>
+                            <a href="/product.html?id=vip-gold-one-million" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="time-less-no4" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="time-less-no4" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=time-less-no4"><img src="assets/timeless.jpg" alt="Timeless" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">Timeless</h3>
+                            <p class="product-desc">Inspired by Signature Blend</p>
+                            <h4 class="product-price">Rs. 1,950</h4>
+                            <a href="/product.html?id=time-less-no4" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="kingdom-bvlgari-aqva" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="kingdom-bvlgari-aqva" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=kingdom-bvlgari-aqva"><img src="assets/kingdom.jpg" alt="Kingdom" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">Kingdom</h3>
+                            <p class="product-desc">Inspired by Aqva</p>
+                            <h4 class="product-price">Rs. 1,950</h4>
+                            <a href="/product.html?id=kingdom-bvlgari-aqva" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="freedom-office-for-men" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="freedom-office-for-men" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=freedom-office-for-men"><img src="assets/freedom.jpg" alt="Corporate Premium" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">Freedom</h3>
+                            <p class="product-desc">Office For Men</p>
+                            <h4 class="product-price">Rs. 1,950</h4>
+                            <a href="/product.html?id=freedom-office-for-men" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="product-card text-center">
+                            <div class="floating-actions">
+                                <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="aura-issey-miyake" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                <button class="fabtn add-to-cart-btn" data-product-id="aura-issey-miyake" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <a href="/product.html?id=aura-issey-miyake"><img src="assets/aura.jpg" alt="Tommy G" class="img-fluid" loading="lazy"></a>
+                            <h3 class="product-name">Aura</h3>
+                            <p class="product-desc">Inspired by Issey Miyake</p>
+                            <h4 class="product-price">Rs. 1,950</h4>
+                            <a href="/product.html?id=aura-issey-miyake" class="btn btn-outline-gold mt-2">View Details</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
