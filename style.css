@@ -199,6 +199,16 @@ section {
     background-color: var(--charcoal);
     color: var(--gold);
 }
+
+/* Open dropdown on hover for desktop */
+@media (min-width: 992px) {
+    .navbar .dropdown:hover > .dropdown-menu {
+        display: block;
+    }
+    .navbar .dropdown .dropdown-menu {
+        margin-top: 0;
+    }
+}
 .navbar .dropdown-item.active,
 .navbar .dropdown-item:active {
     background-color: var(--gold) !important; /* override Bootstrap blue */
@@ -1570,4 +1580,19 @@ footer .copyright-text {
 }
 ::-webkit-scrollbar-thumb:hover {
     background: var(--gold-hover);
+}
+
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in-view { opacity: 1; transform: none; }
+/* Support existing JS that uses .reveal-visible */
+.reveal.reveal-visible { opacity: 1; transform: none; }
+
+/* Optional variants */
+.reveal.fade { transform: none; }
+.reveal.fade-left { transform: translateX(16px); }
+.reveal.fade-right { transform: translateX(-16px); }
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal { transition: none; opacity: 1; transform: none; }
 }
