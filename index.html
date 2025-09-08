@@ -31,14 +31,44 @@
     </script>
 </head>
 <body>
+    <!-- Promo Top Bar -->
+    <div class="promo-bar">
+        <div class="container-fluid main-content d-flex justify-content-center justify-content-md-between align-items-center">
+            <span class="promo-text">15 Days Hassle‑Free Return</span>
+            <span class="promo-text d-none d-md-inline">Free Shipping on Orders Above Rs. 2,999</span>
+        </div>
+    </div>
+
+    <!-- Utility Header: Search • Logo • Cart -->
+    <div class="utility-header">
+        <div class="container-fluid main-content d-flex align-items-center">
+            <form id="siteSearchForm" class="utility-search" role="search">
+                <input id="siteSearchInput" type="search" class="form-control" placeholder="Search" aria-label="Search">
+                <button class="btn-search" type="submit" aria-label="Search"><i class="fas fa-search"></i></button>
+            </form>
+
+            <a class="utility-logo mx-auto" href="/">Nawab Fragrances</a>
+
+            <div class="utility-actions ms-auto">
+                <div class="cart-icon-container" id="cartIcon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <button class="navbar-toggler d-lg-none ms-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Header (Global) -->
-    <header class="navbar navbar-expand-lg fixed-top">
+    <header class="navbar navbar-expand-lg fixed-top navlinks-bar">
         <div class="container-fluid main-content">
-            <a class="navbar-brand" href="/">Nawab Fragrances</a>
+            <a class="navbar-brand visually-hidden" href="/">Nawab Fragrances</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
@@ -66,12 +96,6 @@
                         <a class="nav-link" href="/contact.html">Contact</a>
                     </li>
                 </ul>
-                <div class="d-flex align-items-center ms-lg-4">
-                    <div class="cart-icon-container" id="cartIcon">
-                        <i class="fas fa-shopping-bag"></i>
-                        <span class="cart-count" id="cartCount">0</span>
-                    </div>
-                </div>
             </div>
         </div>
     </header>
@@ -143,7 +167,6 @@
                             <h3 class="product-name">Gorgeous</h3>
                             <p class="product-desc">Inspired by Tommy Girl</p>
                             <h4 class="product-price">Rs. 1,950</h4>
-                            <!-- <a href="/product.html?id=gorgeous-tommy-girl" class="btn btn-outline-gold mt-2">View Details</a> -->
                         </div>
                     </div>
                     <!-- Product Card 3 -->
@@ -157,7 +180,6 @@
                             <h3 class="product-name">Butterfly</h3>
                             <p class="product-desc">Inspired by Gucci Bloom</p>
                             <h4 class="product-price">Rs. 1,950</h4>
-                            <!-- <a href="/product.html?id=butterfly-gucci-bloom" class="btn btn-outline-gold mt-2">View Details</a> -->
                         </div>
                     </div>
                     <!-- Product Card 4 -->
@@ -171,7 +193,6 @@
                             <h3 class="product-name">Era</h3>
                             <p class="product-desc">Inspired by Oud Wood</p>
                             <h4 class="product-price">Rs. 1,950</h4>
-                            <!-- <a href="/product.html?id=era-oud-wood" class="btn btn-outline-gold mt-2">View Details</a> -->
                         </div>
                     </div>
                     <!-- Product Card 5 -->
@@ -185,7 +206,6 @@
                             <h3 class="product-name">Aura</h3>
                             <p class="product-desc">Inspired by Issey Miyake</p>
                             <h4 class="product-price">Rs. 1,950</h4>
-                            <!-- <a href="/product.html?id=aura-issey-miyake" class="btn btn-outline-gold mt-2">View Details</a> -->
                         </div>
                     </div>
                 </div>
@@ -210,7 +230,6 @@
                             <h3 class="product-name">Nawab Signature Perfume for Men</h3>
                             <p class="product-desc">Signature Series</p>
                             <h4 class="product-price">Rs. 2,450</h4>
-                            <a href="/product.html?id=nawab-signature-men" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                     <div class="col">
@@ -223,7 +242,6 @@
                             <h3 class="product-name">VIP Royal Oud</h3>
                             <p class="product-desc">Inspired by Royal Oud</p>
                             <h4 class="product-price">Rs. 2,490</h4>
-                            <a href="/product.html?id=vip-royal-oud" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                     <div class="col">
@@ -236,7 +254,6 @@
                             <h3 class="product-name">SIGMA</h3>
                             <p class="product-desc">Inspired by Tuscan Leather</p>
                             <h4 class="product-price">Rs. 2,150</h4>
-                            <a href="/product.html?id=Nawab-T-Leather" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                     <div class="col">
@@ -249,7 +266,6 @@
                             <h3 class="product-name">Freedom</h3>
                             <p class="product-desc">Office For Men</p>
                             <h4 class="product-price">Rs. 1,950</h4>
-                            <a href="/product.html?id=freedom-office-for-men" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                     <div class="col">
@@ -262,12 +278,17 @@
                             <h3 class="product-name">Alpha Man</h3>
                             <p class="product-desc">Inspired by Aventus</p>
                             <h4 class="product-price">Rs. 2,250</h4>
-                            <a href="/product.html?id=alpha-man-creed-aventus" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- End of Men Category -->
+
+            <div>
+                <img src="assets/third-index.png" alt="">
+            </div>
 
         <!-- Women Category -->
         <section class="featured-collection py-5" id="women-category">
@@ -287,7 +308,6 @@
                             <h3 class="product-name">Nawab Signature Perfume for Girl</h3>
                             <p class="product-desc">Elegant florals</p>
                             <h4 class="product-price">Rs. 2,450</h4>
-                            <a href="/product.html?id=nawab-signature-girl" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                     <div class="col">
@@ -300,7 +320,6 @@
                             <h3 class="product-name">Flora Moves</h3>
                             <p class="product-desc">Gucci flora inspired</p>
                             <h4 class="product-price">Rs. 1,950</h4>
-                            <a href="/product.html?id=flora-moves-gucci-flora" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                     <div class="col">
@@ -313,7 +332,6 @@
                             <h3 class="product-name">Gull</h3>
                             <p class="product-desc">Inspired by Baccarat Rouge 540</p>
                             <h4 class="product-price">Rs. 1,950</h4>
-                            <a href="/product.html?id=gull-baccarat-rouge-540" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                     <div class="col">
@@ -326,7 +344,6 @@
                             <h3 class="product-name">Persona</h3>
                             <p class="product-desc">Inspired by Chocolate Musk</p>
                             <h4 class="product-price">Rs. 1,990</h4>
-                            <a href="/product.html?id=persona-chocolate-musk" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                     <div class="col">
@@ -339,7 +356,6 @@
                             <h3 class="product-name">Golden Girl</h3>
                             <p class="product-desc">Inspired by Guess Gold</p>
                             <h4 class="product-price">Rs. 1,950</h4>
-                            <a href="/product.html?id=golden-girl-guess-gold" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -364,7 +380,6 @@
                             <h3 class="product-name">Platinum</h3>
                             <p class="product-desc">Inspired by Light Blue</p>
                             <h4 class="product-price">Rs. 1,950</h4>
-                            <a href="/product.html?id=platinum-dg-light-blue" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                     <div class="col">
@@ -377,7 +392,6 @@
                             <h3 class="product-name">White Oud Premium</h3>
                             <p class="product-desc">Smooth & luxe</p>
                             <h4 class="product-price">Rs. 2,150</h4>
-                            <a href="/product.html?id=white-oud-premium" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                     <div class="col">
@@ -390,7 +404,6 @@
                             <h3 class="product-name">Prime</h3>
                             <p class="product-desc">Inspired by CK One</p>
                             <h4 class="product-price">Rs. 1,950</h4>
-                            <a href="/product.html?id=prime-ck-one" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                     <div class="col">
@@ -403,7 +416,6 @@
                             <h3 class="product-name">Touch</h3>
                             <p class="product-desc">Inspired by Burberry Body</p>
                             <h4 class="product-price">Rs. 1,950</h4>
-                            <a href="/product.html?id=touch-burberry-body" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                     <div class="col">
@@ -416,12 +428,21 @@
                             <h3 class="product-name">Life</h3>
                             <p class="product-desc">Inspired by Hugo Boss</p>
                             <h4 class="product-price">Rs. 1,850</h4>
-                            <a href="/product.html?id=life-hugo-boss" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+
+
+        <div>
+            <img src="assets/second-index.png" alt="">
+        </div>
+
+
+
+
 
         <!-- Premium Category -->
         <section class="featured-collection py-5" id="premium-category">
@@ -441,7 +462,6 @@
                             <h3 class="product-name">VIP Gold</h3>
                             <p class="product-desc">Inspired by 1 Million</p>
                             <h4 class="product-price">Rs. 2,150</h4>
-                            <a href="/product.html?id=vip-gold-one-million" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                     <div class="col">
@@ -454,7 +474,6 @@
                             <h3 class="product-name">Timeless</h3>
                             <p class="product-desc">Inspired by Signature Blend</p>
                             <h4 class="product-price">Rs. 1,950</h4>
-                            <a href="/product.html?id=time-less-no4" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                     <div class="col">
@@ -467,7 +486,6 @@
                             <h3 class="product-name">Kingdom</h3>
                             <p class="product-desc">Inspired by Aqva</p>
                             <h4 class="product-price">Rs. 1,950</h4>
-                            <a href="/product.html?id=kingdom-bvlgari-aqva" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                     <div class="col">
@@ -480,7 +498,6 @@
                             <h3 class="product-name">Freedom</h3>
                             <p class="product-desc">Office For Men</p>
                             <h4 class="product-price">Rs. 1,950</h4>
-                            <a href="/product.html?id=freedom-office-for-men" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                     <div class="col">
@@ -493,7 +510,6 @@
                             <h3 class="product-name">Aura</h3>
                             <p class="product-desc">Inspired by Issey Miyake</p>
                             <h4 class="product-price">Rs. 1,950</h4>
-                            <a href="/product.html?id=aura-issey-miyake" class="btn btn-outline-gold mt-2">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -503,7 +519,7 @@
         <!-- How to Choose Your Fragrance -->
         <section class="how-to-choose-section">
             <div class="container-fluid main-content text-center">
-                <h2 class="text-white mb-5">How to Choose Your Signature Scent</h2>
+                <h2 class=" mb-5">How to Choose Your Signature Scent</h2>
                 <div class="row">
                     <div class="col-md-4 mb-5 mb-md-0">
                         <i class="fas fa-flask"></i>

@@ -7,6 +7,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartSubtotalSpan = document.getElementById('cartSubtotal');
     const cartCountSpan = document.getElementById('cartCount');
 
+    // --- Global Search ---
+    (function setupGlobalSearch(){
+        const form = document.getElementById('siteSearchForm');
+        const input = document.getElementById('siteSearchInput');
+        if (!form || !input) return;
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const q = (input.value || '').trim();
+            const url = new URL('/shop.html', window.location.origin);
+            if (q) url.searchParams.set('q', q);
+            window.location.href = url.toString();
+        });
+    })();
+
     // --- Product Data ---
     const products = [
         // --- Women ---
@@ -318,10 +332,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // 2. Prepare order details for the email
                 const orderId = 'NW' + Math.floor(Math.random() * 900000 + 100000);
-                const subtotal = cart.reduce((acc, item) => acc + findProductById(item.id).price * item.quantity, 0);
+                
+                // Filter out any invalid cart items and calculate subtotal
+                const validCartItems = cart.filter(item => {
+                    const product = findProductById(item.id);
+                    if (!product) {
+                        console.warn(`Product with ID "${item.id}" not found in products array`);
+                        return false;
+                    }
+                    return true;
+                });
+                
+                // Check if there are any valid items in the cart
+                if (validCartItems.length === 0) {
+                    alert('Your cart appears to be empty or contains invalid items. Please add some products to your cart first.');
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Place Order';
+                    return;
+                }
+                
+                // Update the cart to only include valid items
+                cart = validCartItems;
+                saveCart();
+                
+                const subtotal = validCartItems.reduce((acc, item) => {
+                    const product = findProductById(item.id);
+                    return acc + product.price * item.quantity;
+                }, 0);
                 const total = subtotal + SHIPPING_COST;
 
-                let orderSummaryText = cart.map(item => {
+                let orderSummaryText = validCartItems.map(item => {
                     const p = findProductById(item.id);
                     return `${item.quantity} x ${p.name} (${item.size || 'Standard Size'}) @ Rs. ${p.price.toLocaleString()} each`;
                 }).join('\n'); // Use newline for a clean list in the email
@@ -402,15 +442,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const productCard = document.createElement('div');
                 productCard.classList.add('col');
                 productCard.innerHTML = `
-                    <div class="product-card">
-                        <a href="/product.html?id=${product.id}"><img src="${product.image}" alt="${product.name}" class="img-fluid mb-3"></a>
-                        <h3 class="mb-1 text-white">${product.name}</h3>
-                        <p class="tagline text-muted">${product.tagline}</p>
-                        <div class="price text-gold mb-3">Rs. ${product.price.toLocaleString()}</div>
-                        <div class="d-flex flex-column gap-2">
-                            <button class="btn btn-outline-gold btn-sm quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="${product.id}">Quick View</button>
-                            <button class="btn btn-gold btn-sm add-to-cart-btn" data-product-id="${product.id}">Add to Cart</button>
+                    <div class="product-card text-center">
+                        <div class="floating-actions">
+                            <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="${product.id}" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                            <button class="fabtn add-to-cart-btn" data-product-id="${product.id}" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
                         </div>
+                        <a href="/product.html?id=${product.id}"><img src="${product.image}" alt="${product.name}" class="img-fluid" loading="lazy"></a>
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-desc">${product.tagline}</p>
+                        <h4 class="product-price">Rs. ${product.price.toLocaleString()}</h4>
                     </div>
                 `;
                 productGrid.appendChild(productCard);
@@ -450,6 +490,17 @@ document.addEventListener('DOMContentLoaded', () => {
         function applyFiltersAndSort() {
             let filteredProducts = [...products];
 
+            // Keyword query from search
+            const params = new URLSearchParams(window.location.search);
+            const query = (params.get('q') || '').trim().toLowerCase();
+            if (query) {
+                filteredProducts = filteredProducts.filter(p =>
+                    p.name.toLowerCase().includes(query) ||
+                    (p.tagline && p.tagline.toLowerCase().includes(query)) ||
+                    p.id.toLowerCase().includes(query)
+                );
+            }
+
             const category = categoryFilter ? categoryFilter.value : 'all';
             if (category !== 'all') {
                 if (category === 'premium') {
@@ -484,20 +535,11 @@ document.addEventListener('DOMContentLoaded', () => {
             setupPagination();
         }
 
-        renderShopPage(currentPage);
+        applyFiltersAndSort();
 
         if (sortByFilter) sortByFilter.addEventListener('change', applyFiltersAndSort);
         if (categoryFilter) categoryFilter.addEventListener('change', applyFiltersAndSort);
         if (priceFilter) priceFilter.addEventListener('change', applyFiltersAndSort);
-
-        productGrid.addEventListener('click', e => {
-            const addToCartBtn = e.target.closest('.add-to-cart-btn');
-            if (addToCartBtn) {
-                e.preventDefault();
-                const productId = addToCartBtn.dataset.productId;
-                addToCart(productId); // No size is passed here intentionally
-            }
-        });
 
         // Quick View setup moved to global scope below
 
@@ -724,12 +766,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 selected.forEach(recProduct => {
                     recommendedProductsContainer.innerHTML += `
                         <div class="col">
-                            <div class="product-card">
-                                <a href="/product.html?id=${recProduct.id}"><img src="${recProduct.image}" alt="${recProduct.name}" class="img-fluid mb-3"></a>
+                            <div class="product-card text-center">
+                                <div class="floating-actions">
+                                    <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="${recProduct.id}" aria-label="Quick View"><i class="fas fa-search"></i></button>
+                                    <button class="fabtn add-to-cart-btn" data-product-id="${recProduct.id}" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
+                                </div>
+                                <a href="/product.html?id=${recProduct.id}"><img src="${recProduct.image}" alt="${recProduct.name}" class="img-fluid" loading="lazy"></a>
                                 <h3 class="product-name">${recProduct.name}</h3>
                                 <p class="product-desc">${recProduct.tagline || ''}</p>
                                 <h4 class="product-price">Rs. ${recProduct.price.toLocaleString()}</h4>
-                                <a href="/product.html?id=${recProduct.id}" class="btn btn-outline-gold mt-3">View Details</a>
                             </div>
                         </div>`;
                 });
