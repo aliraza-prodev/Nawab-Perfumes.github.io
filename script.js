@@ -766,7 +766,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 selected.forEach(recProduct => {
                     recommendedProductsContainer.innerHTML += `
                         <div class="col">
-                            <div class="product-card text-center">
+                            <div class="product-card text-left">
                                 <div class="floating-actions">
                                     <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="${recProduct.id}" aria-label="Quick View"><i class="fas fa-search"></i></button>
                                     <button class="fabtn add-to-cart-btn" data-product-id="${recProduct.id}" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
@@ -774,7 +774,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <a href="/product.html?id=${recProduct.id}"><img src="${recProduct.image}" alt="${recProduct.name}" class="img-fluid" loading="lazy"></a>
                                 <h3 class="product-name">${recProduct.name}</h3>
                                 <p class="product-desc">${recProduct.tagline || ''}</p>
-                                <h4 class="product-price">Rs. ${recProduct.price.toLocaleString()}</h4>
+                                <h2 class="product-price">Rs. ${recProduct.price.toLocaleString()}</h2>
                             </div>
                         </div>`;
                 });

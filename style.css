@@ -221,7 +221,7 @@ section {
 }
 
 /* push body content below fixed stacked headers */
-body { padding-top: 210px; }
+/* body { padding-top: 210px; } */
 .navbar-brand {
     font-family: 'Roboto', sans-serif;
     color: var(--gold) !important;
@@ -419,6 +419,16 @@ footer .copyright-text {
     letter-spacing: 2px;
     margin: 6px 0 6px;
     font-size: 0.95rem;
+}
+.viewAll{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 12px;
+    background-color: transparent;
+    color: var(--gold);
+    text-decoration: underline;
 }
 .hero-section {
     min-height: calc(75vh - 90px);
@@ -1090,14 +1100,13 @@ main > div > img {
 
 /* About Page */
 .about-hero {
+    min-height: calc(75vh - 90px);
+    /* background-color: #faf8f300; */
     position: relative;
-    text-align: center;
-    padding: 100px 0;
-    background-image: url('assets/about.jpeg');
-    background-size: cover;
-    background-position: bottom;
     overflow: hidden;
-    z-index: 1;
+    background-image: url('assets/NEW.png'); /* Replace with your GIF path */
+    background-size: cover;
+    background-position:bottom;
 }
 
 .about-hero::before {
@@ -1544,7 +1553,21 @@ main > div > img {
 
 /* Mobile (<768px) */
 @media (max-width: 767.98px) {
-    body { padding-top: 260px; }
+
+    h2{
+        font-size: 1.3rem!important;
+    }
+
+    .recommended-products-section h2 {
+        font-size: 1.3rem!important;
+        text-align: left!important;
+        margin: 0 12px 6px!important;
+    }
+    .cart-sidebar {
+        right: -768px!important;
+    }
+
+    body { padding-top: 70px; }
     .navlinks-bar { top: 170px; }
     .utility-header { height: 70px; }
     /* Keep search visible on mobile per design sample */
@@ -1609,10 +1632,60 @@ main > div > img {
     .hero-section h2 { font-size: 1.2rem; }
     .hero-section .btn { padding: 12px 25px; font-size: 0.9rem; }
 
+    .hero-section , .about-hero {
+        min-height: calc(40vh - 90px);
+        width: 100vw!important;
+    }
+
     .info-section .col-md-6 { margin-bottom: 40px; }
     .info-section img { margin-bottom: 25px; }
 
     .featured-collection .product-card { margin-bottom: 30px; }
+
+    /* Featured Collection: horizontal scroll on mobile */
+    .shop-page-row{
+        justify-content: center!important;
+    }
+     .row-products-cards {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        gap: 2px; /* spacing between cards */
+        padding-bottom: 8px; /* space for scrollbar */
+        scrollbar-width: thin;
+        scroll-snap-type: x mandatory;
+    }
+     .row-products-cards::-webkit-scrollbar { height: 8px; }
+     .row-products-cards::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 6px; }
+     .row-products-cards::-webkit-scrollbar-track { background: var(--charcoal); }
+
+    /* Each product column becomes a fixed-width item */
+     .col {
+        flex: 0 0 auto;
+        width: 180px; /* compact card width like reference */
+        scroll-snap-align: start;
+    }
+    /* Compact card styling for mobile */
+     .product-card {
+        border-radius: 4px!important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        margin-bottom: 0px!important;
+    }
+    .product-card:hover {
+        border: none!important;
+        transform: translateY(0px)!important;
+    }
+     .product-card img {
+        height: 140px!important;
+        border-radius: 4px!important;
+    }
+     .product-card h3 { font-size: 0.95rem; margin: 10px 12px 2px; }
+     .product-card p { font-size: 0.8rem; margin: 0 12px 6px; }
+     .product-card h4 { font-size: 1rem; margin: 0 12px 12px; }
+     .product-card .btn { font-size: 0.85rem; padding: 8px 14px; margin: 6px 12px 12px; }
+     .product-card .floating-actions .fabtn { width: 30px; height: 30px; }
 
     .how-to-choose-section { padding: 60px 0; }
     .how-to-choose-section .col-md-4 { margin-bottom: 40px; }
