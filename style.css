@@ -827,7 +827,7 @@ main > div > img {
 .cart-sidebar {
     position: fixed;
     top: 0;
-    right: -400px; /* Wider sidebar */
+    right: -760px; /* Wider sidebar */
     width: 400px;
     height: 100%;
     background-color: var(--darker-gray);
@@ -1551,8 +1551,13 @@ main > div > img {
     .order-summary { margin-bottom: 40px; }
 }
 
+
 /* Mobile (<768px) */
 @media (max-width: 767.98px) {
+
+    .navbar-toggler{
+        margin-right: 10vw;
+    }
 
     h2{
         font-size: 1.3rem!important;
@@ -1562,9 +1567,6 @@ main > div > img {
         font-size: 1.3rem!important;
         text-align: left!important;
         margin: 0 12px 6px!important;
-    }
-    .cart-sidebar {
-        right: -768px!important;
     }
 
     body { padding-top: 70px; }
@@ -1582,7 +1584,8 @@ main > div > img {
         height: 70px;
     }
     .navbar-brand {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
+        margin-right: 0;
     }
     .navbar-collapse {
         background-color: var(--darker-gray);
@@ -1664,7 +1667,7 @@ main > div > img {
     /* Each product column becomes a fixed-width item */
      .col {
         flex: 0 0 auto;
-        width: 180px; /* compact card width like reference */
+        width: 185px; /* compact card width like reference */
         scroll-snap-align: start;
     }
     /* Compact card styling for mobile */
@@ -1678,10 +1681,10 @@ main > div > img {
         transform: translateY(0px)!important;
     }
      .product-card img {
-        height: 140px!important;
+        height: 160px!important;
         border-radius: 4px!important;
     }
-     .product-card h3 { font-size: 0.95rem; margin: 10px 12px 2px; }
+     .product-card h3 { font-size: 1rem!important; margin: 10px 12px 2px; }
      .product-card p { font-size: 0.8rem; margin: 0 12px 6px; }
      .product-card h4 { font-size: 1rem; margin: 0 12px 12px; }
      .product-card .btn { font-size: 0.85rem; padding: 8px 14px; margin: 6px 12px 12px; }
