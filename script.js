@@ -64,6 +64,48 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'nawab-signature-men', name: 'Nawab Signature Perfume for Men', tagline: 'Signature Series', price: 2450, image: 'assets/Nawab-Signature-Men.jpg', sizes: ['50ml'], category: 'men', premium: true }
     ];
 
+    // --- Sale pricing helper ---
+    // We treat these current prices as 'sale' prices and show an original price = sale + 300
+    const SALE_PRICE_SET = new Set([1950, 2150, 2250, 2450, 2490]);
+
+    function getSaleInfoForPrice(price) {
+        // price may be number or string like 'Rs. 1,950'
+        const p = typeof price === 'number' ? price : parseInt(String(price).replace(/[^0-9]/g, ''), 10) || 0;
+        if (SALE_PRICE_SET.has(p)) {
+            return { original: p + 300, sale: p };
+        }
+        return null;
+    }
+
+    function transformExistingPriceElements() {
+        // Transform static product cards already in HTML (index, category sections)
+        document.querySelectorAll('.product-card').forEach(card => {
+            const priceEl = card.querySelector('.product-price');
+            if (!priceEl) return;
+            const raw = priceEl.textContent || '';
+            const num = parseInt(raw.replace(/[^0-9]/g, ''), 10);
+            const saleInfo = getSaleInfoForPrice(num);
+            if (saleInfo) {
+                // Build the same price markup used by the shop renderer
+                const priceHtml = `<div class="price-block"><span class="original-price">Rs. ${saleInfo.original.toLocaleString()}</span> <span class="sale-price">Rs. ${saleInfo.sale.toLocaleString()}</span></div>`;
+                // Replace the existing price element with the new price block (so markup matches shop page)
+                priceEl.insertAdjacentHTML('afterend', priceHtml);
+                priceEl.remove();
+
+                // Add sale badge if not present
+                if (!card.querySelector('.sale-badge')) {
+                    const badge = document.createElement('div');
+                    badge.className = 'sale-badge';
+                    badge.textContent = 'Sale';
+                    // Prefer inserting before floating-actions so badge matches shop layout
+                    const floating = card.querySelector('.floating-actions');
+                    if (floating) card.insertBefore(badge, floating);
+                    else card.insertBefore(badge, card.firstChild);
+                }
+            }
+        });
+    }
+
     // --- Cart Functions ---
     let cart = JSON.parse(localStorage.getItem('noirOrCart')) || [];
 
@@ -212,7 +254,10 @@ document.addEventListener('DOMContentLoaded', () => {
             quickViewModal.querySelector('.modal-title').textContent = product.name;
             quickViewModal.querySelector('.quick-view-image').src = product.image;
             quickViewModal.querySelector('.quick-view-description').textContent = product.tagline || '';
-            quickViewModal.querySelector('.quick-view-price').textContent = `Rs. ${product.price.toLocaleString()}`;
+            const qvSale = getSaleInfoForPrice(product.price);
+            quickViewModal.querySelector('.quick-view-price').innerHTML = qvSale
+                ? `<span class="original-price">Rs. ${qvSale.original.toLocaleString()}</span> <span class="sale-price">Rs. ${qvSale.sale.toLocaleString()}</span>`
+                : `Rs. ${product.price.toLocaleString()}`;
 
             const sizeSelect = quickViewModal.querySelector('.quick-view-size');
             const sizeContainer = sizeSelect.closest('div');
@@ -248,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Checkout Page Logic (UPDATED FOR WEB3FORMS) ---
     const checkoutOrderSummary = document.getElementById('checkoutOrderSummary');
     const checkoutForm = document.getElementById('checkoutForm');
-    const SHIPPING_COST = 250;
+    const SHIPPING_COST = 150;
 
     function updateCheckoutSummary() {
         if (!checkoutOrderSummary) return;
@@ -441,8 +486,14 @@ document.addEventListener('DOMContentLoaded', () => {
             paginatedItems.forEach(product => {
                 const productCard = document.createElement('div');
                 productCard.classList.add('col');
+                const saleInfo = getSaleInfoForPrice(product.price);
+                const priceHtml = saleInfo
+                    ? `<div class="price-block"><span class="original-price">Rs. ${saleInfo.original.toLocaleString()}</span> <span class="sale-price">Rs. ${saleInfo.sale.toLocaleString()}</span></div>`
+                    : `<h4 class="product-price">Rs. ${product.price.toLocaleString()}</h4>`;
+
                 productCard.innerHTML = `
                     <div class="product-card text-center">
+                        ${saleInfo ? '<div class="sale-badge">Sale</div>' : ''}
                         <div class="floating-actions">
                             <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="${product.id}" aria-label="Quick View"><i class="fas fa-search"></i></button>
                             <button class="fabtn add-to-cart-btn" data-product-id="${product.id}" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
@@ -450,7 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <a href="/product.html?id=${product.id}"><img src="${product.image}" alt="${product.name}" class="img-fluid" loading="lazy"></a>
                         <h3 class="product-name">${product.name}</h3>
                         <p class="product-desc">${product.tagline}</p>
-                        <h4 class="product-price">Rs. ${product.price.toLocaleString()}</h4>
+                        ${priceHtml}
                     </div>
                 `;
                 productGrid.appendChild(productCard);
@@ -672,7 +723,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (productDetailPageDesc) productDetailPageDesc.textContent = product.description || product.tagline || '';
 
             const productDetailPagePrice = document.getElementById('productDetailPagePrice');
-            if (productDetailPagePrice) productDetailPagePrice.textContent = `Rs. ${product.price.toLocaleString()}`;
+            if (productDetailPagePrice) {
+                const pdSale = getSaleInfoForPrice(product.price);
+                productDetailPagePrice.innerHTML = pdSale
+                    ? `<span class="original-price">Rs. ${pdSale.original.toLocaleString()}</span> <span class="sale-price">Rs. ${pdSale.sale.toLocaleString()}</span>`
+                    : `Rs. ${product.price.toLocaleString()}`;
+            }
 
             const mainProductImage = document.getElementById('mainProductImage');
             const thumbnailGallery = document.getElementById('thumbnailGallery');
@@ -764,9 +820,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 const otherProducts = products.filter(p => p.id !== product.id);
                 const selected = otherProducts.slice(16, 20);
                 selected.forEach(recProduct => {
+                    const saleInfo = getSaleInfoForPrice(recProduct.price);
+                    const priceHtml = saleInfo
+                        ? `<div class="price-block"><span class="original-price">Rs. ${saleInfo.original.toLocaleString()}</span> <span class="sale-price">Rs. ${saleInfo.sale.toLocaleString()}</span></div>`
+                        : `<h2 class="product-price">Rs. ${recProduct.price.toLocaleString()}</h2>`;
+
                     recommendedProductsContainer.innerHTML += `
                         <div class="col">
                             <div class="product-card text-left">
+                                ${saleInfo ? '<div class="sale-badge">Sale</div>' : ''}
                                 <div class="floating-actions">
                                     <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="${recProduct.id}" aria-label="Quick View"><i class="fas fa-search"></i></button>
                                     <button class="fabtn add-to-cart-btn" data-product-id="${recProduct.id}" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
@@ -774,7 +836,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <a href="/product.html?id=${recProduct.id}"><img src="${recProduct.image}" alt="${recProduct.name}" class="img-fluid" loading="lazy"></a>
                                 <h3 class="product-name">${recProduct.name}</h3>
                                 <p class="product-desc">${recProduct.tagline || ''}</p>
-                                <h2 class="product-price">Rs. ${recProduct.price.toLocaleString()}</h2>
+                                ${priceHtml}
                             </div>
                         </div>`;
                 });
@@ -815,4 +877,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Final call to update cart on every page load
     updateCartUI();
+    // Transform any static price elements on the page to show sale markup
+    transformExistingPriceElements();
 });

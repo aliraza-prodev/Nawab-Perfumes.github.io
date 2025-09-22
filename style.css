@@ -18,7 +18,7 @@
     --black: #FFFFFF; /* Base backgrounds now light */
     --charcoal: #f8f8f7; /* Light surface */
     /* --gold: #d8a929; */
-    --gold: #daa84c;
+    --gold: #f0b03a;
     --gold-hover: #C19F30;
     --white: #111111; /* Primary text on light */
     --light-gray: #333333; /* Body text */
@@ -141,7 +141,7 @@ a:hover {
 
 /* Global Layout Adjustments */
 .container-fluid.main-content {
-    max-width: 1300px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px; /* Increased side padding */
 }
@@ -1814,4 +1814,30 @@ main > div > img {
 
 @media (prefers-reduced-motion: reduce) {
     .reveal { transition: none; opacity: 1; transform: none; }
+}
+
+/* Sale badge and price styling */
+.sale-badge {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: #ff1900; /* red */
+    color: #fff;
+    padding: 6px 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 3px;
+    z-index: 20;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.2);
+    text-transform: uppercase;
+}
+.price-block { display: flex; gap: 8px; align-items: baseline; justify-content: flex-start; margin: 0 16px 8px; }
+.original-price { color: #ff1900; text-decoration: line-through; font-weight: 700; }
+.sale-price { color: var(--gold); font-weight: 900; font-size: 1.35rem; }
+
+/* Slight responsive adjustments for price block on small cards */
+@media (max-width: 767.98px) {
+    .price-block { flex-direction: row; gap: 5px; align-items: center; margin-left: 12px; }
+    .sale-price { font-size: 1rem; }
+    .original-price { font-size: 0.85rem; }
 }
