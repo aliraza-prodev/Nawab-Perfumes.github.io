@@ -890,6 +890,55 @@ document.addEventListener('DOMContentLoaded', () => {
     transformExistingPriceElements();
     // Setup hover image swapping for product cards (static + dynamic)
     setupHoverImageSwap();
+
+    // --- Mark current page nav link active (so it shows gold) ---
+    (function markActiveNavLink(){
+        try {
+            // get current file name (last segment). Treat root as index.html
+            let currentFile = window.location.pathname.split('/').pop() || 'index.html';
+            if (!currentFile || currentFile === '/') currentFile = 'index.html';
+
+            // normalize index variants (when using '/' or '/index.html')
+            if (currentFile === '') currentFile = 'index.html';
+
+            // Mark .nav-link elements
+            document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+                try {
+                    const linkHref = new URL(link.getAttribute('href') || '', window.location.origin).pathname;
+                    const linkFile = linkHref.split('/').pop() || 'index.html';
+                    if (linkFile === '' || linkFile === '/') {
+                        if (currentFile === 'index.html') link.classList.add('active');
+                        else link.classList.remove('active');
+                    } else if (linkFile === currentFile) {
+                        link.classList.add('active');
+                    } else {
+                        // also handle cases where the nav parent is a directory link (e.g., '/shop/')
+                        // if currentFile starts with linkFile (loose match), mark active
+                        link.classList.toggle('active', linkFile && currentFile && linkFile === currentFile);
+                    }
+                } catch (e) { /* ignore malformed hrefs */ }
+            });
+
+            // Also mark dropdown items (if any) and ensure parent dropdown toggles reflect active state
+            document.querySelectorAll('.navbar .dropdown-item').forEach(item => {
+                try {
+                    const href = new URL(item.getAttribute('href') || '', window.location.origin).pathname;
+                    const file = href.split('/').pop() || 'index.html';
+                    if (file === currentFile) {
+                        item.classList.add('active');
+                        // mark the dropdown toggle (parent .nav-link) as active too if present
+                        const parentToggle = item.closest('.dropdown').querySelector('.nav-link');
+                        if (parentToggle) parentToggle.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                } catch (e) {}
+            });
+        } catch (err) {
+            // harmless if anything fails
+            console.warn('markActiveNavLink error', err);
+        }
+    })();
     
     /**
      * Enable image swap on hover for product cards.
