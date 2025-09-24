@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'time-less-no4', name: 'Time less', tagline: 'Inspired by Signature Blend', price: 1950, image: 'assets/timeless.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
         { id: 'white-oud-premium', name: 'White Oud Premium', tagline: 'Inspired by Premium Oud', price: 2150, image: 'assets/White-Oud-Premium-100ml.png', sizes: ['50ml'], category: 'unisex', premium: true },
         { id: 'imperial-oud-ispahan', name: 'Imperial Oud', tagline: 'Inspired by Oud Ispahan', price: 1950, image: 'assets/imperial-oud.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
-        { id: 'vip-royal-oud', name: 'VIP Royal Oud', tagline: 'Inspired by Royal Oud', price: 1950, image: 'assets/Royal-Oud-100ml.png', sizes: ['50ml'], category: 'unisex', premium: false },
+        { id: 'vip-royal-oud', name: 'VIP Royal Oud', tagline: 'Inspired by Royal Oud', price: 1950, image: 'assets/vip-royal-oud-hover.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
         { id: 'persona-chocolate-musk', name: 'Persona', tagline: 'Inspired by Chocolate Musk', price: 1950, image: 'assets/Persona.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
         { id: 'king-srk', name: 'KING SRK', tagline: 'Inspired by Signature Series', price: 2150, image: 'assets/Special-Oud-100ml.png', sizes: ['50ml'], category: 'unisex', premium: true },
         { id: 'prime-ck-one', name: 'Prime', tagline: 'Inspired by CK One', price: 1950, image: 'assets/prime.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'freedom-office-for-men', name: 'Freedom', tagline: 'Office For Men', price: 1950, image: 'assets/freedom.jpg', sizes: ['50ml'], category: 'men', premium: false },
         { id: 'alpha-man-creed-aventus', name: 'Alpha Man', tagline: 'Inspired by Aventus', price: 1950, image: 'assets/alfa-men.jpg', sizes: ['50ml'], category: 'men', premium: false },
         { id: 'mbf-invictus-legend', name: 'M.B.F', tagline: 'Inspired by Invictus Legend', price: 1950, image: 'assets/mbf.jpg', sizes: ['50ml'], category: 'men', premium: false },
-        { id: 'lethal-blue-d-chanel', name: 'Lethal', tagline: 'Inspired by Bleu de Chanel', price: 1950, image: 'assets/Nawab-Blue-D-100ml.png', sizes: ['50ml'], category: 'men', premium: false },
+        { id: 'lethal-blue-d-chanel', name: 'Lethal', tagline: 'Inspired by Bleu de Chanel', price: 1950, image: 'assets/lethal-hover.jpg', sizes: ['50ml'], category: 'men', premium: false },
         { id: 'power-terre-dhermes', name: 'Power', tagline: 'Inspired by Terre d’Hermes', price: 1950, image: 'assets/Nawab-H-Boss-100ml.png', sizes: ['50ml'], category: 'men', premium: false },
         { id: 'life-hugo-boss', name: 'Life', tagline: 'Inspired by Hugo Boss', price: 1950, image: 'assets/life.jpg', sizes: ['50ml'], category: 'men', premium: false },
         { id: 'nawab-signature-men', name: 'Nawab Signature Perfume for Men', tagline: 'Signature Series', price: 2450, image: 'assets/Nawab-Signature-Men.jpg', sizes: ['50ml'], category: 'men', premium: true }
@@ -490,6 +490,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const priceHtml = saleInfo
                     ? `<div class="price-block"><span class="original-price">Rs. ${saleInfo.original.toLocaleString()}</span> <span class="sale-price">Rs. ${saleInfo.sale.toLocaleString()}</span></div>`
                     : `<h4 class="product-price">Rs. ${product.price.toLocaleString()}</h4>`;
+                // Prepare data-hover-src attribute when a secondary image exists on the product
+                const hoverSrc = (product.images && product.images.length > 1) ? product.images[1] : (product.hoverImage || '');
+                const hoverAttr = hoverSrc ? ` data-hover-src="${hoverSrc}"` : '';
 
                 productCard.innerHTML = `
                     <div class="product-card text-center">
@@ -498,7 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="${product.id}" aria-label="Quick View"><i class="fas fa-search"></i></button>
                             <button class="fabtn add-to-cart-btn" data-product-id="${product.id}" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
                         </div>
-                        <a href="/product.html?id=${product.id}"><img src="${product.image}" alt="${product.name}" class="img-fluid" loading="lazy"></a>
+                        <a href="/product.html?id=${product.id}"><img src="${product.image}" alt="${product.name}" class="img-fluid" loading="lazy"${hoverAttr}></a>
                         <h3 class="product-name">${product.name}</h3>
                         <p class="product-desc">${product.tagline}</p>
                         ${priceHtml}
@@ -506,6 +509,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
                 productGrid.appendChild(productCard);
             });
+            // After adding the page cards, attach hover swap listeners where applicable
+            setupHoverImageSwap();
         }
 
         function setupPagination() {
@@ -825,6 +830,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         ? `<div class="price-block"><span class="original-price">Rs. ${saleInfo.original.toLocaleString()}</span> <span class="sale-price">Rs. ${saleInfo.sale.toLocaleString()}</span></div>`
                         : `<h2 class="product-price">Rs. ${recProduct.price.toLocaleString()}</h2>`;
 
+                    // Determine hoverAttr for recommended product (support images[1] or hoverImage)
+                    const recHoverSrc = (recProduct.images && recProduct.images.length > 1) ? recProduct.images[1] : (recProduct.hoverImage || '');
+                    const recHoverAttr = recHoverSrc ? ` data-hover-src="${recHoverSrc}"` : '';
+
                     recommendedProductsContainer.innerHTML += `
                         <div class="col">
                             <div class="product-card text-left">
@@ -833,7 +842,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <button class="fabtn quick-view-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-product-id="${recProduct.id}" aria-label="Quick View"><i class="fas fa-search"></i></button>
                                     <button class="fabtn add-to-cart-btn" data-product-id="${recProduct.id}" aria-label="Add to Cart"><i class="fas fa-plus"></i></button>
                                 </div>
-                                <a href="/product.html?id=${recProduct.id}"><img src="${recProduct.image}" alt="${recProduct.name}" class="img-fluid" loading="lazy"></a>
+                                <a href="/product.html?id=${recProduct.id}"><img src="${recProduct.image}" alt="${recProduct.name}" class="img-fluid" loading="lazy"${recHoverAttr}></a>
                                 <h3 class="product-name">${recProduct.name}</h3>
                                 <p class="product-desc">${recProduct.tagline || ''}</p>
                                 ${priceHtml}
@@ -879,4 +888,95 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartUI();
     // Transform any static price elements on the page to show sale markup
     transformExistingPriceElements();
+    // Setup hover image swapping for product cards (static + dynamic)
+    setupHoverImageSwap();
+    
+    /**
+     * Enable image swap on hover for product cards.
+     * Priority for hover image source:
+     * 1. img[data-hover-src]
+     * 2. product object 'images[1]' or 'hoverImage' matched by current src
+     */
+    function setupHoverImageSwap() {
+        // Find all product images inside product-card
+        const cards = Array.from(document.querySelectorAll('.product-card'));
+        if (!cards || cards.length === 0) return;
+
+        cards.forEach(card => {
+            const img = card.querySelector('img');
+            if (!img) return;
+
+            // Avoid attaching listeners multiple times
+            if (img.dataset.hoverInitialized === '1') return;
+            img.dataset.hoverInitialized = '1';
+
+            // Determine hover source
+            const explicitHover = img.getAttribute('data-hover-src');
+            let hoverSrc = explicitHover && explicitHover.trim() ? explicitHover.trim() : null;
+
+            // If no explicit hover, try to find product in products[] by matching src filename
+            if (!hoverSrc) {
+                const imgSrc = img.getAttribute('src') || '';
+                const match = products.find(p => p.image && imgSrc.endsWith(p.image));
+                if (match) {
+                    if (match.images && match.images.length > 1) hoverSrc = match.images[1];
+                    else if (match.hoverImage) hoverSrc = match.hoverImage;
+                }
+            }
+
+            // Helper to attach listeners once we have a verified hoverSrc
+            function attachHoverListeners(resolvedHoverSrc) {
+                // Preload hover image for smooth swap
+                const preloaded = new Image();
+                preloaded.src = resolvedHoverSrc;
+
+                // On mouse enter/leave swap src
+                const originalSrc = img.getAttribute('src');
+                const onEnter = () => { img.setAttribute('src', resolvedHoverSrc); };
+                const onLeave = () => { img.setAttribute('src', originalSrc); };
+
+                img.addEventListener('mouseenter', onEnter);
+                img.addEventListener('mouseleave', onLeave);
+
+                // Also support focus for keyboard users
+                img.addEventListener('focus', onEnter);
+                img.addEventListener('blur', onLeave);
+
+                // Touch devices: toggle on touchstart (first touch shows hover, second navigates)
+                let touched = false;
+                img.addEventListener('touchstart', (e) => {
+                    if (!touched) {
+                        e.preventDefault(); // prevent immediate navigation
+                        img.setAttribute('src', resolvedHoverSrc);
+                        touched = true;
+                        setTimeout(() => touched = false, 800);
+                    }
+                }, { passive: false });
+            }
+
+            if (hoverSrc) {
+                // If hoverSrc already known (data-hover-src or product.images), verify it loads
+                const verifier = new Image();
+                verifier.onload = () => attachHoverListeners(hoverSrc);
+                verifier.onerror = () => {/* silently ignore missing hover image */};
+                verifier.src = hoverSrc;
+            } else {
+                // Try constructing a '-hover' filename variant from the current src
+                const imgSrc = img.getAttribute('src') || '';
+                const dotIndex = imgSrc.lastIndexOf('.');
+                if (dotIndex > -1) {
+                    const candidate = imgSrc.slice(0, dotIndex) + '-hover' + imgSrc.slice(dotIndex);
+                    const tester = new Image();
+                    tester.onload = () => {
+                        // candidate exists, attach listeners
+                        attachHoverListeners(candidate);
+                    };
+                    tester.onerror = () => {
+                        // no hover available; nothing to do
+                    };
+                    tester.src = candidate;
+                }
+            }
+        });
+    }
 });
