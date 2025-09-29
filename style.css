@@ -27,6 +27,21 @@
     --darker-gray: #e4e6eb; /* Card/raised surfaces */
 }
 
+/* Carousel Controls - Remove Borders */
+.carousel-control-prev,
+.carousel-control-next {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--black);
