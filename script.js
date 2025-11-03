@@ -23,6 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Product Data ---
     const products = [
+        // --- Oud (New Category) ---
+        { id: 'oud-for-greatness', name: 'Oud For Greatness', tagline: 'Oud Collection', price: 1500, image: 'assets/Oud/OudForGreatness.png', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'oud-wood', name: 'Oud Wood', tagline: 'Oud Collection', price: 1500, image: 'assets/Oud/OudWood.png', hoverImage: 'assets/Oud/OudWoodHover.jpg', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'ghilaf-e-kaaba', name: 'Ghilaf E Kaaba', tagline: 'Oud Collection', price: 1500, image: 'assets/Oud/GhilafEKaaba.png', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'tobacco-oud', name: 'Tobacco Oud', tagline: 'Oud Collection', price: 1500, image: 'assets/Oud/TobaccoOud.png', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'white-musk', name: 'White Musk', tagline: 'Oud Collection', price: 1500, image: 'assets/Oud/WhiteMusk.png', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'oud-splash', name: 'Oud Ispahan', tagline: 'Oud Collection', price: 1500, image: 'assets/Oud/OudSplash.png', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'umar-nawab', name: 'Umar Nawab', tagline: 'Oud Collection', price: 1950, image: 'assets/Oud/UmarNawab.png', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'hajre-aswad', name: 'Hajre Aswad', tagline: 'Oud Collection', price: 1500, image: 'assets/Oud/HajreAswad.png', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'ameer-ul-oud', name: 'Ameer Ul Oud', tagline: 'Oud Collection', price: 1500, image: 'assets/Oud/AmeerUlOud.png', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'white-oud', name: 'White Oud', tagline: 'Oud Collection', price: 1500, image: 'assets/Oud/WhiteOud.png', sizes: ['50ml'], category: 'oud', premium: false },
         // --- Women ---
         { id: 'hif-coco-chanel', name: 'H.I.F.', tagline: 'Inspired by Coco Chanel', price: 1950, image: 'assets/hif-coco-chanel.jpg', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'butterfly-gucci-bloom', name: 'Butterfly', tagline: 'Inspired by Gucci Bloom', price: 1950, image: 'assets/butterfly-gucci-bloom.jpg', sizes: ['50ml'], category: 'women', premium: false },
@@ -66,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Sale pricing helper ---
     // We treat these current prices as 'sale' prices and show an original price = sale + 300
-    const SALE_PRICE_SET = new Set([1950, 2150, 2250, 2450, 2490]);
+    const SALE_PRICE_SET = new Set([1500, 1950, 2150, 2250, 2450, 2490]);
 
     function getSaleInfoForPrice(price) {
         // price may be number or string like 'Rs. 1,950'
