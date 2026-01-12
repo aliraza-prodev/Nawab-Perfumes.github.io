@@ -35,8 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'ameer-ul-oud', name: 'Ameer Ul Oud', tagline: 'Oud Collection', price: 1500, image: 'assets/Oud/AmeerUlOud.png', sizes: ['50ml'], category: 'oud', premium: false },
         { id: 'white-oud', name: 'White Oud', tagline: 'Oud Collection', price: 1500, image: 'assets/Oud/WhiteOud.png', sizes: ['50ml'], category: 'oud', premium: false },
         // --- Women ---
+        { id: 'rani', name: 'Rani', tagline: 'Women Collection', price: 1950, image: 'assets/rani.jpeg', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'hif-coco-chanel', name: 'H.I.F.', tagline: 'Inspired by Coco Chanel', price: 1950, image: 'assets/hif-coco-chanel.jpg', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'butterfly-gucci-bloom', name: 'Butterfly', tagline: 'Inspired by Gucci Bloom', price: 1950, image: 'assets/butterfly-gucci-bloom.jpg', sizes: ['50ml'], category: 'women', premium: false },
+        { id: 'nanhi', name: 'Nanhi', tagline: 'Women Collection', price: 1950, image: 'assets/nanhi.jpeg', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'gorgeous-tommy-girl', name: 'Gorgeous', tagline: 'Inspired by Tommy Girl', price: 1950, image: 'assets/gorgeous-tommy-girl.jpg', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'shelter-bomb-shell', name: 'Shelter', tagline: 'Inspired by Bomb Shell', price: 1950, image: 'assets/shelter4.jpg', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'golden-girl-guess-gold', name: 'Golden Girl', tagline: 'Inspired by Guess Gold', price: 1950, image: 'assets/golden-girl-guess-gold.jpg', sizes: ['50ml'], category: 'women', premium: false },
@@ -51,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // --- Unisex ---
         { id: 'angel-paradise-city-of-stars', name: 'Angel Paradise', tagline: 'Inspired by City of Stars', price: 2150, image: 'assets/angel-paradise-city-of-stars.jpg', sizes: ['50ml'], category: 'unisex', premium: true },
-        { id: 'time-less-no4', name: 'Time less', tagline: 'Inspired by Signature Blend', price: 1950, image: 'assets/timeless.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
+        { id: 'time-less-no4', name: 'Time less', tagline: 'Inspired by Thomas Kosmala No.4', price: 1950, image: 'assets/timeless.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
         { id: 'white-oud-premium', name: 'White Oud Premium', tagline: 'Inspired by Premium Oud', price: 2150, image: 'assets/White-Oud-Premium-100ml.png', sizes: ['50ml'], category: 'unisex', premium: true },
         { id: 'imperial-oud-ispahan', name: 'Imperial Oud', tagline: 'Inspired by Oud Ispahan', price: 1950, image: 'assets/imperial-oud.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
         { id: 'vip-royal-oud', name: 'VIP Royal Oud', tagline: 'Inspired by Royal Oud', price: 1950, image: 'assets/vip-royal-oud-hover.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
@@ -60,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'prime-ck-one', name: 'Prime', tagline: 'Inspired by CK One', price: 1950, image: 'assets/prime.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
 
         // --- Men ---
+        { id: 'sher', name: 'Sher', tagline: 'Mens Collection', price: 1950, image: 'assets/sher.jpeg', sizes: ['50ml'], category: 'men', premium: false },
         { id: 'kingdom-bvlgari-aqva', name: 'Kingdom', tagline: 'Inspired by Aqva', price: 1950, image: 'assets/kingdom.jpg', sizes: ['50ml'], category: 'men', premium: false },
         { id: 'era-oud-wood', name: 'Era', tagline: 'Inspired by Oud Wood', price: 1950, image: 'assets/era.jpg', sizes: ['50ml'], category: 'men', premium: false },
         { id: 'aura-issey-miyake', name: 'Aura', tagline: 'Inspired by Issey Miyake', price: 1950, image: 'assets/aura.jpg', sizes: ['50ml'], category: 'men', premium: false },
@@ -72,7 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'lethal-blue-d-chanel', name: 'Lethal', tagline: 'Inspired by Bleu de Chanel', price: 1950, image: 'assets/lethal-hover.jpg', sizes: ['50ml'], category: 'men', premium: false },
         { id: 'power-terre-dhermes', name: 'Power', tagline: 'Inspired by Terre d’Hermes', price: 1950, image: 'assets/Nawab-H-Boss-100ml.png', sizes: ['50ml'], category: 'men', premium: false },
         { id: 'life-hugo-boss', name: 'Life', tagline: 'Inspired by Hugo Boss', price: 1950, image: 'assets/life.jpg', sizes: ['50ml'], category: 'men', premium: false },
-        { id: 'nawab-signature-men', name: 'Nawab Signature Perfume for Men', tagline: 'Signature Series', price: 2450, image: 'assets/Nawab-Signature-Men.jpg', sizes: ['50ml'], category: 'men', premium: true }
+        { id: 'nawab-signature-men', name: 'Nawab Signature Perfume for Men', tagline: 'Signature Series', price: 2450, image: 'assets/Nawab-Signature-Men.jpg', sizes: ['50ml'], category: 'men', premium: true },
+        { id: 'swag', name: 'Swag', tagline: 'Woody Aromatic fragrance for men', price: 2450, image: 'assets/swag.jpeg', sizes: ['50ml'], category: 'men', premium: true }
     ];
 
     // --- Sale pricing helper ---
