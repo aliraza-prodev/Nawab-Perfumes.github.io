@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartCountSpan = document.getElementById('cartCount');
 
     // --- Global Search ---
-    (function setupGlobalSearch(){
+    (function setupGlobalSearch() {
         const form = document.getElementById('siteSearchForm');
         const input = document.getElementById('siteSearchInput');
         if (!form || !input) return;
@@ -24,18 +24,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Product Data ---
     const products = [
         // --- Oud (New Category) ---
-        { id: 'oud-for-greatness', name: 'Oud For Greatness', tagline: 'Oud Collection', price: 1750, image: 'assets/Oud/OudForGreatness.png', sizes: ['50ml'], category: 'oud', premium: false },
-        { id: 'oud-wood', name: 'Oud Wood', tagline: 'Oud Collection', price: 1750, image: 'assets/Oud/OudWood.png', hoverImage: 'assets/Oud/OudWoodHover.jpg', sizes: ['50ml'], category: 'oud', premium: false },
-        { id: 'ghilaf-e-kaaba', name: 'Ghilaf E Kaaba', tagline: 'Oud Collection', price: 1750, image: 'assets/Oud/GhilafEKaaba.png', sizes: ['50ml'], category: 'oud', premium: false },
-        { id: 'tobacco-oud', name: 'Tobacco Oud', tagline: 'Oud Collection', price: 1750, image: 'assets/Oud/TobaccoOud.png', sizes: ['50ml'], category: 'oud', premium: false },
-        { id: 'white-musk', name: 'White Musk', tagline: 'Oud Collection', price: 1750, image: 'assets/Oud/WhiteMusk.png', sizes: ['50ml'], category: 'oud', premium: false },
-        { id: 'oud-splash', name: 'Oud Ispahan', tagline: 'Oud Collection', price: 1750, image: 'assets/Oud/OudSplash.png', sizes: ['50ml'], category: 'oud', premium: false },
-        { id: 'umar-nawab', name: 'Umar Nawab', tagline: 'Oud Collection', price: 1750, image: 'assets/Oud/UmarNawab.png', sizes: ['50ml'], category: 'oud', premium: false },
-        { id: 'hajre-aswad', name: 'Hajre Aswad', tagline: 'Oud Collection', price: 1750, image: 'assets/Oud/HajreAswad.png', sizes: ['50ml'], category: 'oud', premium: false },
-        { id: 'ameer-ul-oud', name: 'Ameer Ul Oud', tagline: 'Oud Collection', price: 1750, image: 'assets/Oud/AmeerUlOud.png', sizes: ['50ml'], category: 'oud', premium: false },
-        { id: 'white-oud', name: 'White Oud', tagline: 'Oud Collection', price: 1750, image: 'assets/Oud/WhiteOud.png', sizes: ['50ml'], category: 'oud', premium: false },
-        { id: 'kashmiri-oud', name: 'Kashmiri Oud', tagline: 'Oud Collection', price: 1750, image: 'assets/Oud/kashmirioud.jpeg', sizes: ['50ml'], category: 'oud', premium: false },
-        { id: 'black-oud', name: 'Black Oud', tagline: 'Oud Collection', price: 1750, image: 'assets/Oud/blackoud.jpeg', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'oud-for-greatness', name: 'Oud For Greatness', tagline: 'Oud Collection', price: 1850, image: 'assets/Oud/OudForGreatness.png', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'oud-wood', name: 'Oud Wood', tagline: 'Oud Collection', price: 1850, image: 'assets/Oud/OudWood.png', hoverImage: 'assets/Oud/OudWoodHover.jpg', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'ghilaf-e-kaaba', name: 'Ghilaf E Kaaba', tagline: 'Oud Collection', price: 1850, image: 'assets/Oud/GhilafEKaaba.png', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'tobacco-oud', name: 'Tobacco Oud', tagline: 'Oud Collection', price: 1850, image: 'assets/Oud/TobaccoOud.png', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'white-musk', name: 'White Musk', tagline: 'Oud Collection', price: 1850, image: 'assets/Oud/WhiteMusk.png', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'oud-splash', name: 'Oud Ispahan', tagline: 'Oud Collection', price: 1850, image: 'assets/Oud/OudSplash.png', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'umar-nawab', name: 'Umar Nawab', tagline: 'Oud Collection', price: 1850, image: 'assets/Oud/UmarNawab.png', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'hajre-aswad', name: 'Hajre Aswad', tagline: 'Oud Collection', price: 1850, image: 'assets/Oud/HajreAswad.png', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'ameer-ul-oud', name: 'Ameer Ul Oud', tagline: 'Oud Collection', price: 1850, image: 'assets/Oud/AmeerUlOud.png', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'white-oud', name: 'White Oud', tagline: 'Oud Collection', price: 1850, image: 'assets/Oud/WhiteOud.png', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'kashmiri-oud', name: 'Kashmiri Oud', tagline: 'Oud Collection', price: 1850, image: 'assets/Oud/kashmirioud.jpeg', sizes: ['50ml'], category: 'oud', premium: false },
+        { id: 'black-oud', name: 'Black Oud', tagline: 'Oud Collection', price: 1850, image: 'assets/Oud/blackoud.jpeg', sizes: ['50ml'], category: 'oud', premium: false },
         // --- Women ---
         //  { id: 'nawab-signature-girl', name: 'Nawab Signature Perfume for Girl', tagline: 'Signature Series', price: 2450, image: 'assets/Nawab-Begum-100ml.png', sizes: ['50ml'], category: 'women', premium: true },
         { id: 'rani', name: 'Rani', tagline: 'Women Collection', price: 2150, image: 'assets/rani.jpeg', sizes: ['50ml'], category: 'women', premium: false },
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'rainbow-black-opium', name: 'Rainbow', tagline: 'Inspired by Black Opium', price: 2150, image: 'assets/Special-Oud-100ml.jpeg', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'platinum-dg-light-blue', name: 'Platinum', tagline: 'Inspired by D&J Light Blue', price: 2150, image: 'assets/platinum.jpg', sizes: ['50ml'], category: 'women', premium: false },
         { id: 'aroma-breeze-spring-flower', name: 'Aroma Breeze', tagline: 'Inspired by Spring Flower', price: 2450, image: 'assets/aroma-breeze-spring-flower.jpg', sizes: ['50ml'], category: 'women', premium: true },
-       
+
         // --- Unisex ---
         { id: 'angel-paradise-city-of-stars', name: 'Angel Paradise', tagline: 'Inspired by City of Stars', price: 2450, image: 'assets/angel-paradise-city-of-stars.jpg', sizes: ['50ml'], category: 'unisex', premium: true },
         { id: 'time-less-no4', name: 'Time less', tagline: 'Inspired by Thomas Kosmala No.4', price: 2150, image: 'assets/timeless.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
@@ -79,11 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'lethal-blue-d-chanel', name: 'Lethal', tagline: 'Inspired by Bleu de Chanel', price: 2150, image: 'assets/lethal-hover.jpg', sizes: ['50ml'], category: 'men', premium: false },
         { id: 'power-terre-dhermes', name: 'Power', tagline: 'Inspired by Terre d’Hermes', price: 2150, image: 'assets/Nawab-H-Boss-100ml.png', sizes: ['50ml'], category: 'men', premium: false },
         { id: 'life-hugo-boss', name: 'Life', tagline: 'Inspired by Hugo Boss', price: 2150, image: 'assets/life.jpg', sizes: ['50ml'], category: 'men', premium: false },
-        ];
+    ];
 
     // --- Sale pricing helper ---
     // We treat these current prices as 'sale' prices and show an original price = sale + 300
-    const SALE_PRICE_SET = new Set([1500,1750, 1950, 2150, 2250, 2450, 2490]);
+    const SALE_PRICE_SET = new Set([1500, 1850, 1950, 2150, 2250, 2450, 2490]);
 
     function getSaleInfoForPrice(price) {
         // price may be number or string like 'Rs. 1,950'
@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Global Quick View modal population (works on all pages) ---
-    (function setupGlobalQuickView(){
+    (function setupGlobalQuickView() {
         const quickViewModal = document.getElementById('quickViewModal');
         if (!quickViewModal) return;
 
@@ -481,7 +481,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // 2. Prepare order details for the email
                 const orderId = 'NW' + Math.floor(Math.random() * 900000 + 100000);
-                
+
                 // Filter out any invalid cart items and calculate subtotal
                 const validCartItems = cart.filter(item => {
                     const product = findProductById(item.id);
@@ -491,7 +491,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     return true;
                 });
-                
+
                 // Check if there are any valid items in the cart
                 if (validCartItems.length === 0) {
                     alert('Your cart appears to be empty or contains invalid items. Please add some products to your cart first.');
@@ -499,11 +499,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     submitButton.textContent = 'Place Order';
                     return;
                 }
-                
+
                 // Update the cart to only include valid items
                 cart = validCartItems;
                 saveCart();
-                
+
                 const subtotal = validCartItems.reduce((acc, item) => {
                     const product = findProductById(item.id);
                     return acc + product.price * item.quantity;
@@ -526,7 +526,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('formOrderId').value = orderId;
                 document.getElementById('formOrderSummary').value = orderSummaryText;
                 document.getElementById('formTotalAmount').value = `Rs. ${total.toLocaleString()}`;
-                
+
                 // Add a subject line for the email
                 const formData = new FormData(checkoutForm);
                 formData.append("subject", `New Order From Nawab Fragrances - #${orderId}`);
@@ -562,10 +562,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
-    
+
     // --- The rest of your script (shop page logic, etc.) remains the same ---
     // ...
- // --- Shop Page Filtering and Pagination Logic ---
+    // --- Shop Page Filtering and Pagination Logic ---
     const productGrid = document.getElementById('productGrid');
     if (productGrid) {
         const paginationContainer = document.getElementById('paginationContainer');
@@ -648,7 +648,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             paginationContainer.appendChild(createPageLink('Next →', currentPage + 1, currentPage === pageCount));
         }
-        
+
         function applyFiltersAndSort() {
             let filteredProducts = [...products];
 
@@ -726,7 +726,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Quick View setup moved to global scope below
 
         // Expose simple category filter for category pages
-        window.filterProductsByCategory = function(categoryKey) {
+        window.filterProductsByCategory = function (categoryKey) {
             if (!categoryKey) {
                 currentProducts = [...products];
             } else if (categoryKey === 'premium') {
@@ -1000,7 +1000,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Scroll reveal: fade-in only for product cards in featured sections (landing)
-    (function setupScrollReveal(){
+    (function setupScrollReveal() {
         const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const targets = Array.from(document.querySelectorAll('.featured-collection .product-card'));
         if (targets.length === 0) return;
@@ -1032,7 +1032,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupHoverImageSwap();
 
     // --- Mark current page nav link active (so it shows gold) ---
-    (function markActiveNavLink(){
+    (function markActiveNavLink() {
         try {
             // get current file name (last segment). Treat root as index.html
             let currentFile = window.location.pathname.split('/').pop() || 'index.html';
@@ -1072,14 +1072,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else {
                         item.classList.remove('active');
                     }
-                } catch (e) {}
+                } catch (e) { }
             });
         } catch (err) {
             // harmless if anything fails
             console.warn('markActiveNavLink error', err);
         }
     })();
-    
+
     /**
      * Enable image swap on hover for product cards.
      * Priority for hover image source:
@@ -1147,7 +1147,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // If hoverSrc already known (data-hover-src or product.images), verify it loads
                 const verifier = new Image();
                 verifier.onload = () => attachHoverListeners(hoverSrc);
-                verifier.onerror = () => {/* silently ignore missing hover image */};
+                verifier.onerror = () => {/* silently ignore missing hover image */ };
                 verifier.src = hoverSrc;
             } else {
                 // Try constructing a '-hover' filename variant from the current src
