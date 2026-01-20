@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'time-less-no4', name: 'Time less', tagline: 'Inspired by Thomas Kosmala No.4', price: 2150, image: 'assets/timeless.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
         { id: 'white-oud-premium', name: 'White Oud Premium', tagline: 'Inspired by Premium Oud', price: 2450, image: 'assets/White-Oud-Premium-100ml.jpeg', sizes: ['50ml'], category: 'unisex', premium: true },
         { id: 'imperial-oud-ispahan', name: 'Imperial Oud', tagline: 'Inspired by Oud Ispahan', price: 2150, image: 'assets/imperial-oud.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
-        { id: 'vip-royal-oud', name: 'VIP Royal Oud', tagline: 'Inspired by Royal Oud', price: 2150, image: 'assets/vip-royal-oud-hover.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
+        { id: 'vip-royal-oud', name: 'VIP Royal Oud', tagline: 'Inspired by Royal Oud', price: 2150, image: 'assets/vip-royal-oud-hover1.jpeg', sizes: ['50ml'], category: 'unisex', premium: false },
         { id: 'persona-chocolate-musk', name: 'Persona', tagline: 'Inspired by Chocolate Musk', price: 2150, image: 'assets/Persona.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
         { id: 'king-srk', name: 'KING SRK', tagline: 'Inspired by Signature Series', price: 2450, image: 'assets/Special-Oud-100ml.jpeg', sizes: ['50ml'], category: 'unisex', premium: true },
         { id: 'prime-ck-one', name: 'Prime', tagline: 'Inspired by CK One', price: 2150, image: 'assets/prime.jpg', sizes: ['50ml'], category: 'unisex', premium: false },
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const SALE_PRICE_SET = new Set([1500, 1850, 1950, 2150, 2250, 2450, 2490]);
 
     function getSaleInfoForPrice(price) {
-        // price may be number or string like 'Rs. 1,950'
+        // price may be number or string like 'Rs. 2,150'
         const p = typeof price === 'number' ? price : parseInt(String(price).replace(/[^0-9]/g, ''), 10) || 0;
         if (SALE_PRICE_SET.has(p)) {
             return { original: p + 300, sale: p };
@@ -1030,6 +1030,54 @@ document.addEventListener('DOMContentLoaded', () => {
     transformExistingPriceElements();
     // Setup hover image swapping for product cards (static + dynamic)
     setupHoverImageSwap();
+
+    // Setup image loaders: wrap images with a loader spinner until they finish loading
+    function setupImageLoaders() {
+        const selectors = ['.product-card img', '.hero-section img', '.product-detail-section img', 'img[data-src]'];
+        const imgs = Array.from(document.querySelectorAll(selectors.join(',')));
+        imgs.forEach(img => {
+            if (!img || img.closest('.img-loader-wrapper')) return;
+
+            // Create wrapper and loader
+            const wrapper = document.createElement('div');
+            wrapper.className = 'img-loader-wrapper';
+
+            // Insert wrapper before the image and move the img inside it
+            img.parentNode.insertBefore(wrapper, img);
+            wrapper.appendChild(img);
+
+            const loader = document.createElement('div');
+            loader.className = 'img-loader';
+            loader.setAttribute('aria-hidden', 'true');
+            loader.innerHTML = '<div class="spinner"></div>';
+            wrapper.appendChild(loader);
+
+            // Ensure image is hidden until loaded
+            if (!(img.complete && img.naturalWidth)) {
+                img.style.opacity = '0';
+            }
+
+            const markLoaded = () => {
+                wrapper.classList.add('loaded');
+                img.style.transition = 'opacity .24s ease';
+                img.style.opacity = '1';
+            };
+
+            if (img.complete && img.naturalWidth) {
+                markLoaded();
+            } else {
+                img.addEventListener('load', markLoaded, { once: true });
+                img.addEventListener('error', () => {
+                    // Hide loader even on error so UI isn't blocked
+                    wrapper.classList.add('loaded');
+                    img.style.opacity = '1';
+                }, { once: true });
+            }
+        });
+    }
+
+    // Call after initial DOM setup — lazy loader in this script sets src later, so it's okay.
+    setupImageLoaders();
 
     // --- Mark current page nav link active (so it shows gold) ---
     (function markActiveNavLink() {
