@@ -307,13 +307,103 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })();
 
+    // --- Lazy Loading: images and background images ---
+    (function setupLazyLoading() {
+        // Ensure native lazy loading attribute exists on images
+        document.querySelectorAll('img').forEach(img => {
+            if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+        });
+
+        // Support images that use data-src (deferred src)
+        const dataSrcImages = document.querySelectorAll('img[data-src]');
+        if (dataSrcImages.length) {
+            if ('IntersectionObserver' in window) {
+                const io = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            el.src = el.dataset.src;
+                            if (el.dataset.srcset) el.srcset = el.dataset.srcset;
+                            el.removeAttribute('data-src');
+                            observer.unobserve(el);
+                        }
+                    });
+                }, { rootMargin: '200px 0px' });
+                dataSrcImages.forEach(img => io.observe(img));
+            } else {
+                dataSrcImages.forEach(img => {
+                    img.src = img.dataset.src;
+                    if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+                    img.removeAttribute('data-src');
+                });
+            }
+        }
+
+        // Lazy-load background images via data-bg attribute
+        const bgEls = document.querySelectorAll('[data-bg]');
+        if (bgEls.length) {
+            if ('IntersectionObserver' in window) {
+                const bgObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            el.style.backgroundImage = `url('${el.dataset.bg}')`;
+                            el.removeAttribute('data-bg');
+                            observer.unobserve(el);
+                        }
+                    });
+                }, { rootMargin: '200px 0px' });
+                bgEls.forEach(el => bgObserver.observe(el));
+            } else {
+                bgEls.forEach(el => {
+                    el.style.backgroundImage = `url('${el.dataset.bg}')`;
+                    el.removeAttribute('data-bg');
+                });
+            }
+        }
+    })();
+
+    // --- Marquee: make banner text continuous (duplicate content for seamless loop) ---
+    (function setupMarqueeLoop() {
+        const marquees = document.querySelectorAll('.free-delivery-banner .marquee');
+        if (!marquees.length) return;
+
+        marquees.forEach(m => {
+            // Extract raw text (including icons) and trim
+            const rawHTML = m.innerHTML.trim();
+            // Create inner container and two copies for seamless scroll
+            const inner = document.createElement('div');
+            inner.className = 'marquee-inner';
+
+            const item1 = document.createElement('span');
+            item1.className = 'marquee-item';
+            item1.innerHTML = rawHTML;
+
+            const item2 = item1.cloneNode(true);
+
+            inner.appendChild(item1);
+            inner.appendChild(item2);
+
+            // Replace original content
+            m.innerHTML = '';
+            m.appendChild(inner);
+        });
+    })();
+
     // --- Checkout Page Logic (UPDATED FOR WEB3FORMS) ---
     const checkoutOrderSummary = document.getElementById('checkoutOrderSummary');
     const checkoutForm = document.getElementById('checkoutForm');
-    const SHIPPING_COST = 150;
+    const SHIPPING_COST = 0;
 
     function updateCheckoutSummary() {
         if (!checkoutOrderSummary) return;
+
+        const shippingHtml = SHIPPING_COST > 0 ? `
+            <div class="totals-row">
+                <span>Shipping:</span>
+                <span>Rs. ${SHIPPING_COST.toLocaleString()}</span>
+            </div>
+        ` : '';
 
         checkoutOrderSummary.innerHTML = `
             <h5 class="mb-4">Order Summary</h5>
@@ -322,10 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span>Subtotal:</span>
                 <span id="checkoutSubtotal"></span>
             </div>
-            <div class="totals-row">
-                <span>Shipping:</span>
-                <span>Rs. ${SHIPPING_COST.toLocaleString()}</span>
-            </div>
+            ${shippingHtml}
             <div class="totals-row total">
                 <span>Total:</span>
                 <span id="checkoutTotal"></span>
@@ -430,7 +517,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 orderSummaryText += `\n-----------------------------------`;
                 orderSummaryText += `\nSubtotal: Rs. ${subtotal.toLocaleString()}`;
-                orderSummaryText += `\nShipping: Rs. ${SHIPPING_COST.toLocaleString()}`;
+                if (SHIPPING_COST > 0) {
+                    orderSummaryText += `\nShipping: Rs. ${SHIPPING_COST.toLocaleString()}`;
+                }
                 orderSummaryText += `\nTOTAL: Rs. ${total.toLocaleString()}`;
 
                 // 3. Populate the hidden form fields

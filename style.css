@@ -25,6 +25,9 @@
     --medium-gray: #666666; /* Secondary text */
     --dark-gray: #E5E7EB; /* Borders/dividers */
     --darker-gray: #e4e6eb; /* Card/raised surfaces */
+    /* Layout sizes */
+    --banner-height: 36px;
+    --navbar-height: 60px;
 }
 
 /* Carousel Controls - Remove Borders */
@@ -48,7 +51,7 @@ body {
     color: var(--light-gray);
     line-height: 1.7;
     margin: 0;
-    padding-top: 90px;
+    padding-top: calc(var(--banner-height) + var(--navbar-height) + 30px);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -188,6 +191,53 @@ section {
     align-items: center;
 }
 .promo-text { font-size: 0.9rem; }
+
+/* Free Delivery Banner */
+.free-delivery-banner {
+    --banner-height: 36px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--banner-height);
+    background: var(--gold);
+    color: var(--black);
+    padding: 0px 0 ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1060;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.free-delivery-banner .marquee {
+    width: 100%;
+    overflow: hidden;
+       padding:0px 0 ;
+}
+.free-delivery-banner .marquee-inner {
+    display: inline-flex;
+    gap: 48px; /* space between repeated messages */
+    align-items: center;
+    min-width: 200%; /* ensures two copies fit inline */
+    animation: marquee 12s linear infinite;
+    
+}
+.free-delivery-banner .marquee-item {
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: 0.95rem;
+       padding: 10px 0 ;
+}
+.free-delivery-banner i { margin-right: 10px; }
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Move fixed navbar below the banner */
+.navbar.fixed-top { top: var(--banner-height) !important; }
 
 .utility-header {
     position: fixed;
